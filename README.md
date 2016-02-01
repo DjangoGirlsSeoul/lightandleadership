@@ -21,11 +21,6 @@ This assumes that you have python3 installed. (we are using 3.4 but this should 
     > So, let's create a **virtual environment** (also called a *virtualenv*). Virtualenv will isolate your Python/Django setup on a per-project basis. This means that any changes you make to one website won't affect any others you're also developing. Neat, right?
 > All you need to do is find a directory in which you want to create the `virtualenv`; your home directory, for example. On Windows it might look like `C:\Users\Name\` (where `Name` is the name of your login).
 
-    > For this tutorial we will be using a new directory `djangogirls` from your home directory:
-
-        mkdir djangogirls
-        cd djangogirls
-
     > We will make a virtualenv called `myvenv`. The general command will be in the format:
 
         python3 -m venv myvenv
@@ -34,7 +29,7 @@ This assumes that you have python3 installed. (we are using 3.4 but this should 
 
     > To create a new `virtualenv`, you need to open the console (we told you about that a few chapters ago - remember?) and run `C:\Python34\python -m venv myvenv`. It will look like this:
 
-        C:\Users\Name\djangogirls> C:\Python34\python -m venv myvenv
+        C:\Users\Name\virtualenvironments> C:\Python34\python -m venv myvenv
 
     > where `C:\Python34\python` is the directory in which you previously installed Python and `myvenv` is the name of your `virtualenv`. You can use any other name, but stick to lowercase and use no spaces, accents or special characters. It is also good idea to keep the name short - you'll be referencing it a lot!
 
@@ -43,7 +38,7 @@ This assumes that you have python3 installed. (we are using 3.4 but this should 
     > Creating a `virtualenv` on both Linux and OS X is as simple as running `python3 -m venv myvenv`.
     It will look like this:
 
-        ~/djangogirls$ python3 -m venv myvenv
+        ~/virtualenvironments$ python3 -m venv myvenv
 
     > `myvenv` is the name of your `virtualenv`. You can use any other name, but stick to lowercase and use no spaces. It is also good idea to keep the name short as you'll be referencing it a lot!
 
@@ -53,8 +48,8 @@ This assumes that you have python3 installed. (we are using 3.4 but this should 
 
     > > To get around this, use the `virtualenv` command instead.
 
-    > >     ~/djangogirls$ sudo apt-get install python-virtualenv
-    > >    ~/djangogirls$ virtualenv --python=python3.4 myvenv
+    > >     ~/virtualenvironments$ sudo apt-get install python-virtualenv
+    > >    ~/virtualenvironments$ virtualenv --python=python3.4 myvenv
 
 4. Activate the virtualenv (also copied from the djangogirls tutorial - change `djangogirls` to `lightandleadership`)
     > ## Working with virtualenv
@@ -65,13 +60,13 @@ This assumes that you have python3 installed. (we are using 3.4 but this should 
 
     > Start your virtual environment by running:
 
-        C:\Users\Name\djangogirls> myvenv\Scripts\activate
+        C:\Users\Name\virtualenvironments> myvenv\Scripts\activate
 
     > #### Linux and OS X 
 
     > Start your virtual environment by running:
 
-        ~/djangogirls$ source myvenv/bin/activate
+        ~/virtualenvironments$ source myvenv/bin/activate
 
     > Remember to replace `myvenv` with your chosen `virtualenv` name!
 
@@ -81,11 +76,11 @@ This assumes that you have python3 installed. (we are using 3.4 but this should 
 
     > You will know that you have `virtualenv` started when you see that the prompt in your console looks like:
 
-        (myvenv) C:\Users\Name\djangogirls>
+        (myvenv) C:\Users\Name\virtualenvironments>
 
     > or:
 
-        (myvenv) ~/djangogirls$
+        (myvenv) ~/virtualenvironments$
 
     > Notice the prefix `(myvenv)` appears!
 
