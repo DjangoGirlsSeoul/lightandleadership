@@ -6,8 +6,9 @@
 <h3>Setting up your local environment</h3>
 -----
 
-This assumes that you have python3 installed. (we are using 3.4 but this should work for most python 3 versions)
-Go to a folder where you'll want to save the project folder. 
+<p>This assumes that you have python3 installed. (we are using 3.4 but this should work for most python 3 versions)
+Go to a folder where you'll want to save the project folder. </p>
+
 1. Clone the project by entering `git clone git@github.com:rachellcalhoun/lightandleadership.git` in the terminal
     - This will create a folder called `lightandleadership` where you ran the command
     - 'cd ..' to leave this folder
@@ -52,7 +53,7 @@ Go to a folder where you'll want to save the project folder.
     > >     ~/virtualenvironments$ sudo apt-get install python-virtualenv
     > >    ~/virtualenvironments$ virtualenv --python=python3.4 myvenv
 
-4. Activate the virtualenv (also copied from the djangogirls tutorial - change `djangogirls` to `lightandleadership`)
+4. Activate the virtualenv (also copied from the djangogirls tutorial - check folder names!)
     > ## Working with virtualenv
 
     > The command above will create a directory called `myvenv` (or whatever name you chose) that contains our virtual environment (basically a bunch of directory and files). 
@@ -89,8 +90,8 @@ Go to a folder where you'll want to save the project folder.
 
     > OK, we have all important dependencies in place. We can finally install Django!
     
-( 'cd ..' to leave virtualenvironments folder) 
-5. Go into the `lightandleadership` directory `cd ../lightandleadership`
+
+5. ( 'cd ..' to leave virtualenvironments folder) Go into the `lightandleadership` directory `cd ../lightandleadership`
 
 6. Run `pip install -r requirements.txt` to install the pip dependencies
 
