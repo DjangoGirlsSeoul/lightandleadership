@@ -8,58 +8,36 @@ hr{
 	height:2px; 
 	background-color: #747784;
 }
+.navbar {
+  color: transparent;
+}
 .navbar ul {
 	font-size: 20px;
 	padding-top:15px;
 }
-.text-muted{
-	color: #BCBBBB;
+ .navbar.transparent.navbar-inverse .navbar-inner {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
 }
-.text-thin{
-	font-weight:100;
-}
-.title-super{
-	font-size: 45px;
-	font-family: 'Lato', sans-serif;
-	font-weight:100;
-}
-.title-logo{
-	margin-top:20px;
-}
-.skillscontent{
-	border-width: 1px;
-	border: solid #747784;
-	padding:10px;
-	border-radius:5px;
-}
-.kitten-row {
 
-}
-.kitten {
-  width:80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  margin-top:1em;
-  margin-bottom:auto;
-  min-height:300px;
-  padding:1em;
-}
 .title-row {
 	margin-top:2em;
 	margin-bottom: 2em;
 }
-.kitten img {
+img {
 	max-height: 100%;
 	 max-width: 100%;
 	margin-top:5px;
 }
-/*.description {
-	margin-bottom:0px;
-}*/
-.skill-images{
-	max-width: 30%;
-}
 
+.main{
+  min-height: 500px;
+}
 
 
 .footer {
@@ -68,8 +46,6 @@ hr{
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-image: linear-gradient(to bottom, #3C3C3C 0px, #222 100%);
-  background-repeat: repeat-x;
 }
 .footer ul {
     list-style-type: none;
@@ -90,7 +66,7 @@ hr{
 
 }
 .footer a:hover{
-  color:white;
+  color:black;
   font-style: none;
 }
 
