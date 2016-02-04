@@ -1,3 +1,5 @@
+<h1>How to Contribute</h1>
+<h4>So you want to help but don't know how? Check this out: </h4>
 <ol>
 <li><p>Set up a working copy on your computer. </p>
  <p> Firstly you need a local fork of the the project, so go ahead and press the "fork" button in GitHub.</p> 
