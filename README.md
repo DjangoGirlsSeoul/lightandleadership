@@ -9,7 +9,7 @@
 <p>This assumes that you have python3 installed. (we are using 3.4 but this should work for most python 3 versions)
 Go to a folder where you'll want to save the project folder. </p>
 
-1. Clone the project by entering `https://github.com/djangogirlscodecamp/lightandleadership.git` in the terminal
+1. Clone the project by entering `git clone https://github.com/djangogirlscodecamp/lightandleadership.git` in the terminal
     - This will create a folder called `lightandleadership` where you ran the command
     - 'cd ..' to leave this folder
 
