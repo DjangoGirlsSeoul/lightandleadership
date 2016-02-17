@@ -48,16 +48,21 @@ hr{
 	margin-bottom: 2em;
 }
 
-.ourstoryrow{ 
-  height:200px;
+.post { 
+  border: 5px solid black;
+  margin:0;
+  width: 100%:;
   }
-
 .ourstoryimg {
   padding-top:15%;
 }
 
 .main { 
   padding-top: 20px;
+  width:100%;
+  margin-right:0;
+  margin-left:0;
+  padding:0;
   }
 
 .footer {
