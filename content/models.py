@@ -2,12 +2,19 @@ from django.db import models
 from django.utils import timezone
 
 
-class Ourstory(models.Model):
-    img = models.ImageField(upload_to ='uploads')
+class OurStory(models.Model):
+    img = models.ImageField(blank=True, null=True)
     text = models.TextField()
-    color = models.CharField(max_length=6)
+    color = models.CharField(max_length=6, blank=True)
+    order = models.PositiveIntegerField()
 
 
 
     def __str__(self):
         return self.text
+
+class OurStoryTitle(models.Model):
+    title = models.TextField()
+
+    def __str__(self):
+        return self.title

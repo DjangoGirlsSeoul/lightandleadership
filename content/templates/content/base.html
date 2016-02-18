@@ -22,7 +22,7 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}">
       </head>
       <body>
-       <nav class="navbar">
+       <nav class="navbar  navbar-default">
 		  <div class="container-fluid">
 		  <div class="navbar-header text-uppercase">
 		    <a class="navbar-brand title-super " href="#">Light and Leadership</a>
@@ -37,16 +37,23 @@
 		    </div>
 		  <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 		    <ul class="nav navbar-nav">
-		      <li><a href="#">What we do</a></li>
-		      <li><a href="#">Take Action</a></li>
-		      <li><a href="#">About Us</a></li>
-		      <li class="active"><a href="#">Donate</a></li>
+		     	<li><a href="#">What we do</a></li>
+		      	<li class="dropdown">
+		     	 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Take Action<span class="caret"></span></a>
+                   	<ul class="dropdown-menu">
+					    <li><a href="#">USA</a></li>
+					    <li><a href="#">Peru</a></li>
+					    <li><a href="#">Somewhere else?</a></li>
+					</ul>
+				</li>
+				<li><a href="#">About us</a></li>
+				<li class="active"><a href="#">Donate</a></li>
 		    </ul>
 		  </div>
 		  </div>
 		</nav>
 		 <div class="container main">
-		 	{% block menu %}
+		 	{% block content %}
                 
             {% endblock %}
 		 </div>
