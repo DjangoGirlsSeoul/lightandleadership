@@ -73,6 +73,30 @@ body {
   padding-top:25%;
   max-height: 25%;
 }
+/*childrens program page css*/
+.programpost {
+  min-height: 350px;
+}
+.childrensclass {
+  padding-bottom: 1000px;
+  margin-bottom: -1000px;
+  height: 100%;
+}
+.row {
+   overflow: hidden;
+}
+.childrenstitle{
+  padding-top: 4em;
+  color:blue;
+  font-weight: 700;
+}
+.programtextright {
+  padding: 2em;
+}
+.programsubtitle {
+  padding-top:10%;
+  color:white;
+}
 
 .main { 
   padding-top: 20px;
