@@ -13,6 +13,15 @@ class OurStory(models.Model):
     def __str__(self):
         return self.text
 
+
+class Ourteam(models.Model):
+    img = models.ImageField(upload_to='uploads')
+    text = models.TextField()
+    us_team = models.CharField(max_length=100)
+    peru_team = models.CharField(max_length=100)
+    board_team = models.CharField(max_length=100)
+
+
 class OurStoryTitle(models.Model):
     title = models.TextField()
 
