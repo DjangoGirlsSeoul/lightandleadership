@@ -29,6 +29,16 @@
 {% else %}
 <div class="row">
 	<div class="programpost">
+	  	<div class="col-md-4 col-md-push-8 childrensclass" style="background-color:{{program.color}}">
+			<h1 class="programsubtitle text-center">{{program.subtitle}}</h1>
+		</div>
+	 	<div class="col-md-8 col-md-pull-4 ">
+		 	<div class="center-block programtextright">{{ program.text|safe}}</div>
+	 	</div>
+	 </div>
+ </div>
+<!-- <div class="row">
+	<div class="programpost">
 		 <div class="col-md-8">
 			 <div class="center-block programtextright">{{ program.text|safe}}</div>
 		 </div>
@@ -37,7 +47,7 @@
 			<h1 class="programsubtitle text-center">{{program.subtitle}}</h1>
 		 </div>
 	</div>
-</div>
+</div> -->
 
  {% endif %}
  {% endfor %}
