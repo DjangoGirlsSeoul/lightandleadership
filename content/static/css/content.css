@@ -2,6 +2,7 @@ body {
 	font-family: 'Lato', sans-serif;
 	color: #747784;
 	font-weight:400;
+
 }
 /*override bootstrap navbar settings*/
 .navbar .navbar-nav  li  a:focus, .navbar .navbar-nav > li > a:hover {
@@ -18,7 +19,7 @@ body {
 }
 .navbar ul {
     font-size: 20px;
-    padding-top: 15px;
+    /*padding-top: 15px;*/
     color: white;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -36,25 +37,41 @@ body {
   background-image: none;
   background-color: #7a25ae;
   color:white;
-  }
-
-hr{
-	height:2px; 
-	background-color: #747784;
 }
 
-.title-row {
-	margin-top:2em;
-	margin-bottom: 2em;
+.navbar-nav > li {
+  padding-left:1em;
+  padding-right:1em;
 }
 
-.post { 
-  border: 5px solid black;
+.navbar-nav > li > .dropdown-menu {
+   background: rgba(0, 0, 0, 0.3);
+}
+
+.ourstorytitle{
+	padding-top:3em;
   margin:0;
-  width: 100%:;
-  }
+  color:white;
+  font-weight: 700;
+}
+
+.ourstorypost {
+  height: 500px;
+/*  border: 5px solid black;*/
+}
+
+.storytext, .storytextright {
+  padding-top: 4em;
+  padding-bottom: 3em;
+  color:white;
+}
+.storytext {
+  padding-left: 3em;
+}
+
 .ourstoryimg {
-  padding-top:15%;
+  padding-top:25%;
+  max-height: 25%;
 }
 
 .main { 
