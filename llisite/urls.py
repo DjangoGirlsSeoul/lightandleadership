@@ -6,11 +6,6 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-<<<<<<< HEAD
-    url(r'', include('content.urls')),
-]
-=======
-     url(r'', include('content.urls')),
+     url(r'', include('content.urls',namespace='content')),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()
->>>>>>> upstream/master
