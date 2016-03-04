@@ -73,6 +73,31 @@ body {
   padding-top:25%;
   max-height: 25%;
 }
+/*childrens program page css*/
+.programpost {
+  min-height: 350px;
+}
+.childrensclass {
+  min-height: 350px;
+}
+.row {
+   overflow: hidden;
+}
+.ccright {
+  float:right;
+}
+.childrenstitle{
+  padding-top: 4em;
+  color:blue;
+  font-weight: 700;
+}
+.programtextright {
+  padding: 2em;
+}
+.programsubtitle {
+  padding-top:10%;
+  color:white;
+}
 
 .main { 
   padding-top: 20px;
@@ -119,8 +144,22 @@ body {
 	font-size: 1.5em;
 	padding-bottom:.5em;
   }
-  .subtitle{
-  	display:none;
+  .childrensclass {
+  min-height: 100px;
+  padding-bottom:1em;
+  }
+  .programsubtitle {
+    padding-top:1em;
+  }
+
+}
+@media(max-width: 786px){
+  .childrensclass {
+    min-height: 100px;
+    padding-bottom: 2em;
+  }
+  .programsubtitle {
+    padding-top:1em;
   }
 }
 
@@ -137,10 +176,8 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
-  .subtitle {
-  	font-size: 1em;
-  	margin-top:.5em;
-  }
+
+  
  }
 
 @media (min-width: 992px) {
