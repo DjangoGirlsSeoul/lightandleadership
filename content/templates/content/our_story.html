@@ -2,6 +2,7 @@
 
 {% block content %}
 
+ {% if ourstory %}
  {% for story in ourstory %}
  {% if forloop.counter0|divisibleby:2 %}
  	
@@ -39,4 +40,7 @@
  </div>
  {% endif %}
  {% endfor %}
+ {% else %}
+  <h2>No Story available</h2>
+ {% endif %}
 {% endblock %}
