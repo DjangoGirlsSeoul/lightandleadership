@@ -1,9 +1,5 @@
 from django.shortcuts import render
-<<<<<<< HEAD
-from .models import OurStory, Ourteam
-=======
 from .models import OurStory, Ourteam, ChildrensProgram
->>>>>>> 2f0b4f55c19d7830dcc9b0bb7d7edbcd75a1745a
 from django.utils import timezone
 
 
