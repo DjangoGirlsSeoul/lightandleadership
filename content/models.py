@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 class OurStory(models.Model):
-    img = models.ImageField(blank=True, null=True)
+    img = models.ImageField(upload_to='aboutus', blank=True, null=True)
     text = models.TextField()
     color = models.CharField(max_length=20, blank=True)
     order = models.PositiveIntegerField()
@@ -15,7 +15,7 @@ class OurStory(models.Model):
 
 
 class Ourteam(models.Model):
-    img = models.ImageField(blank=True, null=True)
+    img = models.ImageField(upload_to='aboutus', blank=True, null=True)
     text = models.TextField()
     us_team = models.CharField(max_length=100)
     peru_team = models.CharField(max_length=100)
@@ -30,7 +30,7 @@ class OurStoryTitle(models.Model):
 
 class ChildrensProgram(models.Model):
 	pagetitle = models.CharField(blank=True, null=True, max_length=100)
-	img = models.ImageField(blank=True, null=True)
+	img = models.ImageField(upload_to='education',blank=True, null=True)
 	subtitle = models.CharField(blank=True, null=True, max_length=50)
 	text = models.TextField(blank=True, null=True)
 	color = models.CharField(max_length=20, blank=True)
