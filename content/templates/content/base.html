@@ -1,79 +1,90 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-    <html>
-      <head>
-      
+<html>
+    <head>
         <title>Light and Leadership Initiative</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-		<!-- Optional theme -->
-		<link rel="shortcut icon" type="image/x-icon" href="images/favicon(1).ico" />
-		<!--fonts and icons-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<!--to get lato font-->
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,100' rel='stylesheet' type='text/css'>
-		<!--bootstrap-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-   		<!--custome style sheet-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon(1).ico" />
+        <!--fonts and icons-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!--to get lato font-->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100' rel='stylesheet' type='text/css'>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <!--custome style sheet-->
         <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}">
-      </head>
-      <body>
-       <nav class="navbar  navbar-default navbar-fixed-top">
-		  <div class="container-fluid">
-		  <div class="navbar-header text-uppercase">
-		    <a class="navbar-brand title-super " href="#"><img src="lightleadershiplogo.jpeg" alt="light leadership logo"></a>
-		      <h4 class= "subtitle"></h4>
-		    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-	      	</button>
-		      
-		    </div>
-		  <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-		    <ul class="nav navbar-nav">
-		     	<li class="text-uppercase"><a href="#">What we do</a></li>
-		      	<li class="dropdown">
-		     	 <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#">Take Action<span class="caret"></span></a>
-                   	<ul class="dropdown-menu">
-					    <li><a href="#">USA</a></li>
-					    <li><a href="#">Peru</a></li>
-					    <li><a href="#">Somewhere else?</a></li>
-					</ul>
-				</li>
-				<li class="text-uppercase"><a href="#">About us</a></li>
-				<li class="active text-uppercase"><a href="#">Donate</a></li>
-		    </ul>
-		  </div>
-		  </div>
-		</nav>
-		 <div class="container main">
-		 	{% block content %}
-                
+    </head>
+    <body>
+        <nav class="navbar  navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header text-uppercase">
+                    <a class="navbar-brand title-super " href="#"><img src="lightleadershiplogo.jpeg" alt="light leadership logo"></a>
+                    <h4 class= "subtitle"></h4>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#">About Us<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/ourstory">Our Story</a></li>
+                                <li><a href="#">Why Peru</a></li>
+                                <li><a href="#">Ethical And Responsible Volunteering</a></li>
+                                <li><a href="#">Financials</a></li>
+                                <li><a href="#">Board Members, Staff and Volunteers</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#">What we do<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/childrensprogram">Children(7-12)</a></li>
+                                <li><a href="/teensprogram">Teens (13-17)</a></li>
+                                <li><a href="/womensprogram">Women (18+)</a></li>
+                                <li><a href="/artisanprogram">H Artisan Products</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#">Take Action<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Volunteer Peru</a></li>
+                                <li><a href="#">Volunteer Chicago</a></li>
+                                <li><a href="#">In Kind Donations</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container main">
+            {% block content %}
             {% endblock %}
-		 </div>
-
-		 <footer class="footer">
-      	<div class="container">
-	      <div class="row">
-	      	<div class="col-md-12">
-	      		<p>Follow us</p>
-		       <ul class="text-muted text-right list-inline" style="none">
-
-		        	<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>	           
-		            <li><a href="#" class="instagram"> <span><i class="fa fa-instagram" alt ="instagram"></i></span></a></li>
-		            <li><a href="https://twitter.com/lliperu" class="twitter"> <span><i class="fa fa-twitter" alt ="Twitter"></i></span></a></li>
-		        </ul>
-	        </div>
-	      </div>
-      </div>
-    </footer>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Follow us</p>
+                        <ul class="text-muted text-right list-inline" style="none">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="instagram"> <span><i class="fa fa-instagram" alt ="instagram"></i></span></a></li>
+                            <li><a href="https://twitter.com/lliperu" class="twitter"> <span><i class="fa fa-twitter" alt ="Twitter"></i></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </body>
 </html>
