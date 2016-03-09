@@ -14,7 +14,7 @@ class OurStory(models.Model):
 		return self.text
 
 
-class Ourteam(models.Model):
+class OurTeam(models.Model):
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
 	text = models.TextField()
 	us_team = models.CharField(max_length=100)
