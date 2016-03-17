@@ -1,13 +1,15 @@
-<h1>Light and Leadership Non-profit Project</h1>
+Light and Leadership Non-profit Project
+---
 
-<h3>About</h3>
-<p>Django girls Seoul members has gotten an opportunity to contribute to a non-profit project. We will use Python and Django for backend and bootstrap for front end.</h3>
+About
+---
+Django girls Seoul members has gotten an opportunity to contribute to a non-profit project. We will use Python and Django for backend and bootstrap for front end
 
-<h3>Setting up your local environment</h3>
+Setting up your local environment
 -----
 
-<p>This assumes that you have python3 installed. (we are using 3.4 but this should work for most python 3 versions)
-Go to a folder where you'll want to save the project folder. </p>
+This assumes that you have python3 installed. (we are using 3.4 but this should work for most python 3 versions)
+Go to a folder where you'll want to save the project folder.
 
 1. First fork the djangogirlscodecamp/lightandleadership repository to your personal Github account by clicking the 'fork' button in the top right side of the screen. 
 <img src="https://github.com/DjangoGirls/tutorial/blob/master/contributing/images/fork.png">
@@ -109,8 +111,8 @@ Go to a folder where you'll want to save the project folder. </p>
 
 ---
 
-We are mostly following the standard [github flow](https://guides.github.com/introduction/flow/). Only difference is that we do not test our PRs in production, but that might change later.
+We are mostly following the standard [github flow](https://guides.github.com/introduction/flow/). Only difference is that we do not test our PRs in production, but that might change later. We are also forking instead of branching.
 
-We also have an automatic deploy triggered by travis which puts our code up on python anywhere, which is where our app is hosted.
+Please test PRs locally. This means when you are reviewing a PR, pull the PR branch locally and then run the migrations (and whatever else is required) and check if what was meant to be fixed was fixed and nothing broke by mistake.
 
-If you want to read more about how our releases work [here](releases.md)
+
