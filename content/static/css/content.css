@@ -107,14 +107,22 @@ body {
   color:white;
 }
 
-.main { 
+.main {
   padding-top: 20px;
   width:100%;
   margin-right:0;
   margin-left:0;
   padding:0;
   }
-
+/*flatpages main content*/
+.maincontent  {
+  margin-top: 10px;
+  padding: 50px;
+  min-height:550px;
+}
+.flatpagetext{
+  padding:50px;
+}
 .footer {
   margin-top:20px;
   bottom: 0;
@@ -127,7 +135,7 @@ body {
     list-style-type: none;
     margin-top: 5px;
     padding: 0;
-} 
+}
 
 .footer ul li a {
     display: block;
@@ -147,7 +155,7 @@ body {
 }
 
 @media(max-width: 640px){
-  
+
   .title-super{
 	font-size: 1.5em;
 	padding-bottom:.5em;
@@ -185,10 +193,10 @@ body {
     padding-left: 0;
   }
 
-  
+
  }
 
 @media (min-width: 992px) {
-  
+
 }
 
