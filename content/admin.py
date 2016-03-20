@@ -27,7 +27,10 @@ class EduProgramAdmin(admin.ModelAdmin):
     fields = ['category', 'order', 'title', 'img', 'color', 'text']
     list_display = ('title','category', 'order')
 
+class OurStoryAdmin(admin.ModelAdmin):
+    fields = [ 'order', 'img', 'color', 'text']
+    list_display = ('order', 'color')
 
-admin.site.register(OurStory)
+admin.site.register(OurStory, OurStoryAdmin)
 admin.site.register(OurTeam)
 admin.site.register(EduProgram, EduProgramAdmin)
