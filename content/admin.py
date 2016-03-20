@@ -12,7 +12,10 @@ class OurStoryAdmin(admin.ModelAdmin):
     list_display=('id', 'order', 'text')
 
 
+class OurTeamAdmin(admin.ModelAdmin):
+    fields = ['id', 'text']
+    list_display = ('id', 'text')
 
 admin.site.register(OurStory, OurStoryAdmin)
-admin.site.register(OurTeam)
+admin.site.register(OurTeam, OurTeamAdmin)
 admin.site.register(EduProgram, EduProgramAdmin)
