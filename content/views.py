@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import OurStory, Ourteam, EduProgram
+from .models import OurStory, OurTeam, EduProgram
 from django.utils import timezone
 
 
