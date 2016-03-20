@@ -62,36 +62,29 @@ body {
 }
 /*ourstory page css*/
 .ourstorytitle {
-  padding-top: 3em;
+  padding-top: 2em;
+  padding-bottom: 1em;
   margin: 0;
   color: #fff;
   font-weight: 700;
+
 }
 
 .ourstorypost {
   min-height: 500px;
   margin-top: 0;
-
-/*  border: 5px solid black;*/
-}
-.row {
-  margin: 0;
-  padding: 0;
-}
-
-.ourstoryimg {
-  max-width: 50%;
-  margin-top: 10%;
-}
-
-.storytext,.storytextright {
+  padding:3em;
   padding-top: 4em;
-  padding-bottom: 3em;
   color: #fff;
 }
 
+.ourstoryimg {
+  max-height: 350px;
+  max-width: 70%;
+  margin-top: 2em;
+}
 .storytext {
-  padding-left: 3em;
+  margin-top: 2em;
 }
 
 /*childrens program page css*/

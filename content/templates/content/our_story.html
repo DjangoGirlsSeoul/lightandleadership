@@ -3,7 +3,7 @@
 {% if ourstory %}
 {% for story in ourstory %}
 {% if forloop.counter0|divisibleby:2 %}
-<div class="row "ourstorypost" style="background-color:{{story.color}}"">
+<div class="row ourstorypost" style="background-color:{{story.color}}">
 
         {% if forloop.first %}
         <h1 class="ourstorytitle text-center text-uppercase">Our Story</h1>
@@ -17,7 +17,7 @@
 
 </div>
 {% else %}
-<div class="row "ourstorypost" style="background-color:{{story.color}}"">
+<div class="row ourstorypost" style="background-color:{{story.color}}"">
 
         <div class="col-md-6">
             {%if story.img %}
