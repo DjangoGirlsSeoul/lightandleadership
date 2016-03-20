@@ -60,7 +60,7 @@ body {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,.navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: #fff;
 }
-
+/*ourstory page css*/
 .ourstorytitle {
   padding-top: 3em;
   margin: 0;
@@ -69,8 +69,19 @@ body {
 }
 
 .ourstorypost {
-  height: 500px;
+  min-height: 500px;
+  margin-top: 0;
+
 /*  border: 5px solid black;*/
+}
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.ourstoryimg {
+  max-width: 50%;
+  margin-top: 10%;
 }
 
 .storytext,.storytextright {
@@ -81,11 +92,6 @@ body {
 
 .storytext {
   padding-left: 3em;
-}
-
-.ourstoryimg {
-  padding-top: 25%;
-  max-height: 25%;
 }
 
 /*childrens program page css*/

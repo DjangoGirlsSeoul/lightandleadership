@@ -3,8 +3,8 @@
 {% if ourstory %}
 {% for story in ourstory %}
 {% if forloop.counter0|divisibleby:2 %}
-<div class="row">
-    <div class="ourstorypost" style="background-color:{{story.color}}">
+<div class="row "ourstorypost" style="background-color:{{story.color}}"">
+
         {% if forloop.first %}
         <h1 class="ourstorytitle text-center text-uppercase">Our Story</h1>
         {% endif %}
@@ -12,25 +12,25 @@
             <h3 class="center-block storytext">{{ story.text }}</h3>
         </div>
         <div class="col-md-6">
-            {%if story.img %}<img class="center-block img-responsive ourstoryimg"  src="{{story.img.url}}" alt="Generic placeholder image" width="140" height="140">{% endif %}
+            {%if story.img %}<img class="center-block img-responsive ourstoryimg"  src="{{story.img.url}}" alt="Generic placeholder image">{% endif %}
         </div>
-    </div>
+
 </div>
 {% else %}
-<div class="row">
-    <div class="ourstorypost" style="background-color:{{story.color}}">
+<div class="row "ourstorypost" style="background-color:{{story.color}}"">
+
         <div class="col-md-6">
             {%if story.img %}
-            <img class="center-block img-responsive ourstoryimg" src="{{story.img.url}}" alt="Generic placeholder image" width="140" height="140">
+            <img class="center-block img-responsive ourstoryimg" src="{{story.img.url}}" alt="Generic placeholder image">
             {% endif %}
         </div>
         <div class="col-md-6">
             {% if story.title %}
             <h1>{{ story.title }}</h1>
             {% endif %}
-            <h3 class="center-block storytextright">{{ story.text}}</h3>
+            <h3 class="center-block storytextright">{{ story.text|safe}}</h3>
         </div>
-    </div>
+
 </div>
 {% endif %}
 {% endfor %}
