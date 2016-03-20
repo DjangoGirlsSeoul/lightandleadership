@@ -8,8 +8,6 @@ class OurStory(models.Model):
 	color = models.CharField(max_length=20, blank=True)
 	order = models.PositiveIntegerField()
 
-
-
 	def __str__(self):
 		return self.text
 
@@ -21,12 +19,16 @@ class OurTeam(models.Model):
 	peru_team = models.CharField(max_length=100)
 	board_team = models.CharField(max_length=100)
 
+	def __str__(self):
+		return self.text
+
 
 class OurStoryTitle(models.Model):
 	title = models.TextField()
 
 	def __str__(self):
 		return self.title
+
 
 class EduProgram(models.Model):
 	title = models.CharField(blank=True, null=True, max_length=100)
@@ -45,7 +47,6 @@ class EduProgram(models.Model):
 		(ARTISAN, 'Artisan'),
 		)
 	category = models.CharField(max_length=15, choices=POSTCATEGORY, default=CHILDREN)
-
 
 	def __str__(self):
 		return self.title
