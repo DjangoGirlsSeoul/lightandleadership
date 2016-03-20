@@ -1,11 +1,11 @@
 from django.test import TestCase
-from content.models import OurStory,Ourteam,OurStoryTitle
+from content.models import OurStory,OurTeam,OurStoryTitle
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 class OurStoryTestCase(TestCase):
     def setUp(self):
-        
+
         story1 = OurStory.objects.create(text="title 1", color="#ff0000",order=5)
         story2 = OurStory.objects.create(text="title 2",order=7)
 
