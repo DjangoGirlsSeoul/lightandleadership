@@ -13,7 +13,7 @@
             <h3 class="center-block storytext">{{ story.text }}</h3>
         </div>
         <div class="col-md-6">
-            {%if story.img %}<img class="center-block img-responsive ourstoryimg"  src="{{story.img.url}}" alt="Generic placeholder image"  width="140" height="140">{% endif %}
+            {%if story.img %}<img class="center-block img-responsive ourstoryimg"  src="{{story.img.url}}" alt="Generic placeholder image" width="140" height="140">{% endif %}
         </div>
     </div>
 </div>
@@ -23,14 +23,14 @@
 
         <div class="col-md-6">
             {%if story.img %}
-            <img class="center-block img-responsive ourstoryimg" src="{{story.img.url}}" alt="Generic placeholder image"  width="140" height="140">
+            <img class="center-block img-responsive ourstoryimg" src="{{story.img.url}}" alt="Generic placeholder image" width="140" height="140">
             {% endif %}
         </div>
         <div class="col-md-6">
             {% if story.title %}
             <h1>{{ story.title }}</h1>
             {% endif %}
-            <h3 class="center-block storytextright">{{ story.text|safe}}</h3>
+            <h3 class="center-block storytextright">{{ story.text}}</h3>
         </div>
     </div>
 </div>
