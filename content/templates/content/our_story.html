@@ -5,7 +5,6 @@
 {% if forloop.counter0|divisibleby:2 %}
 <div class="row">
     <div class="ourstorypost" style="background-color:{{story.color}}">
-
         {% if forloop.first %}
         <h1 class="ourstorytitle text-center text-uppercase">Our Story</h1>
         {% endif %}
@@ -20,7 +19,6 @@
 {% else %}
 <div class="row">
     <div class="ourstorypost" style="background-color:{{story.color}}">
-
         <div class="col-md-6">
             {%if story.img %}
             <img class="center-block img-responsive ourstoryimg" src="{{story.img.url}}" alt="Generic placeholder image" width="140" height="140">
