@@ -25,6 +25,9 @@
             {% endif %}
         </div>
         <div class="col-md-6">
+            {% if story.title %}
+            <h1>{{ story.title }}</h1>s
+            {% endif %}
             <h3 class="center-block storytext storytextright">{{ story.text}}</h3>
         </div>
     </div>
