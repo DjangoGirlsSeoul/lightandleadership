@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.flatpages',
     'content',
+    'tinymce',
 )
 SITE_ID = 1
 MIDDLEWARE_CLASSES = (
@@ -99,7 +100,21 @@ USE_L10N = True
 
 USE_TZ = True
 
+# TINYMCE_JS_URL = 'http://debug.example.org/tiny_mce/tiny_mce_src.js'
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,xhtmlxtras,spellchecker,paste,searchreplace, save, advhr, advimage, advlink, emotions, iespell, insertdatetime, preview",
+    'theme_advanced_buttons1': "bold,italic,underline,strikethrough,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,formatselect,fontselect,fontsizeselect",
+    'theme_advanced_buttons2': "bullist,numlist,outdent,indent,ltr,rtl,separator,link,unlink,anchor,image,separator,table,insertdate,inserttime,advhr,emotions,media,charmap,separator,undo,redo",
+    'theme': 'advanced',
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+    'elementpath': False,
+    'height': 300,
+    'width': 1000,
+    'resize': 'both',
 
+}
+TINYMCE_SPELLCHECKER = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
