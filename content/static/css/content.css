@@ -67,40 +67,28 @@ body {
   margin: 0;
   color: #fff;
   font-weight: 700;
-
-<<<<<<< HEAD
 }
 
-.ourstorypost {
-  min-height: 500px;
-  margin-top: 0;
-  padding:3em;
-  padding-top: 4em;
-=======
 .ourstorypost {
   min-height: 500px;
   padding-top: 4em;
   padding-bottom: 3em;
   padding-left: 3em;
   padding-right: 2em;
->>>>>>> master
   color: #fff;
 }
 
 .ourstoryimg {
-<<<<<<< HEAD
   max-height: 350px;
   max-width: 70%;
   margin-top: 2em;
 }
 .storytext {
   margin-top: 2em;
-=======
   padding-top: 3em;
   max-height: 300px;
   max-width: 80%;
   margin:auto;
->>>>>>> master
 }
 
 /*childrens program page css*/

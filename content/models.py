@@ -4,15 +4,15 @@ from tinymce import models as tinymce_models
 
 
 class OurStory(models.Model):
-	img = models.ImageField(upload_to='aboutus', blank=True, null=True, help_text="Upload an image to go with the text")
-	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description.")
-	color = models.CharField(max_length=20, blank=True, help_text="Enter a color: Both 'red' and '#FF0000' are accceptable")
-	order = models.CharField(max_length=2, help_text="Enter a number. 1 will be at the top of the page")
+	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
+	text = tinymce_models.HTMLField()
+	color = models.CharField(max_length=20, blank=True)
+	order = models.PositiveIntegerField()
 
 
 
 	def __str__(self):
-		return self.order
+		return self.text
 
 
 class OurTeam(models.Model):
