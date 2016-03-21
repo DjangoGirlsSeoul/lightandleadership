@@ -23,10 +23,10 @@ class MCEFlatPageAdmin(FlatPageAdmin):
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, MCEFlatPageAdmin)
 
-
 class EduProgramAdmin(admin.ModelAdmin):
     fields = ['category', 'order', 'title', 'img', 'color', 'text']
     list_display = ('title','category', 'order')
+
 
 admin.site.register(OurStory)
 admin.site.register(OurTeam)
