@@ -3,7 +3,8 @@
 {% if ourstory %}
 {% for story in ourstory %}
 {% if forloop.counter0|divisibleby:2 %}
-<div class="row ourstorypost" style="background-color:{{story.color}}">
+<div class="row">
+    <div class="ourstorypost" style="background-color:{{story.color}}">
 
         {% if forloop.first %}
         <h1 class="ourstorytitle text-center text-uppercase">Our Story</h1>
@@ -14,10 +15,11 @@
         <div class="col-md-6">
             {%if story.img %}<img class="center-block img-responsive ourstoryimg"  src="{{story.img.url}}" alt="Generic placeholder image">{% endif %}
         </div>
-
+    </div>
 </div>
 {% else %}
-<div class="row ourstorypost" style="background-color:{{story.color}}"">
+<div class="row">
+    <div class="ourstorypost" style="background-color:{{story.color}}">
 
         <div class="col-md-6">
             {%if story.img %}
@@ -30,7 +32,7 @@
             {% endif %}
             <h3 class="center-block storytextright">{{ story.text|safe}}</h3>
         </div>
-
+    </div>
 </div>
 {% endif %}
 {% endfor %}
