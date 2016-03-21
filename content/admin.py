@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import OurStory, OurTeam, EduProgram
+from .models import OurStory, OurTeam, EduProgram, EthicalPost
 # Register your models here.
 
 class EduProgramAdmin(admin.ModelAdmin):
@@ -10,3 +10,4 @@ class EduProgramAdmin(admin.ModelAdmin):
 admin.site.register(OurStory)
 admin.site.register(OurTeam)
 admin.site.register(EduProgram, EduProgramAdmin)
+admin.site.register(EthicalPost)

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in ethicalpost %}
+{% if forloop.counter0|divisibleby:2 %}
+{% if forloop.first %}
+<div class="row">
+    {% if post.img %} <!--  if image 4, 8 col -->
+    <div class="col-md-5 col-md-push-7">
+      <img class="center-block img-responsive ethicsimage" src="{{post.img.url}}">
+    </div>
+    {% else %}<!-- if no img center the title in the first row -->
+    <div class="col-md-12">
+        <h1 class="childrenstitle text-center text-uppercase">{{post.title}}</h1>
+    </div>
+    </div>
+{% endif %}
+    <div class="col-md-7 col-md-pull-5">
+         <h1 class="ethicstitle text-uppercase">{{post.title}}</h1>
+        {% if post.text %}
+         <div class="center-block programtextright">{{ post.text|safe}}</div>
+         {% endif %}
+    </div>
+</div>
+
+<!--  end row 1 -->
+</div>
+{% else %}
+<div class="row">
+    <div class="programpost">
+        <div class="col-md-4 col-md-push-8 childrensclass">
+             {%if post.img %}
+            <img class="center-block img-responsive ethicsimage" src="{{post.img.url}}" alt="Generic placeholder image">
+            {% endif %}
+        </div>
+        <div class="col-md-8 col-md-pull-4 ">
+            <div class="center-block programtextright">{{ post.text|safe}}</div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% else %}
+<div class="row">
+    <div class="programpost">
+        <div class="col-md-4">
+             {%if post.img %}
+            <img class="center-block img-responsive ethicsimage" src="{{post.img.url}}" alt="Generic placeholder image">
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <div class="center-block programtextright">{{ post.text|safe}}</div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
+

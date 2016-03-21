@@ -126,7 +126,17 @@ body {
   margin-left: 0;
   padding: 0;
 }
+/*ethics page css*/
+.ethicsimage {
+  max-width: 100%;
+  /*max-height: 400px;*/
+}
 
+.ethicstitle {
+  padding-top: 1em;
+  color: blue;
+  font-weight: bold;
+}
 /*flatpages main content*/
 .maincontent {
   margin-top: 10px;
