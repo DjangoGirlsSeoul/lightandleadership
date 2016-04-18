@@ -19,9 +19,6 @@ class OurTeam(models.Model):
 	peru_team = models.CharField(max_length=100)
 	board_team = models.CharField(max_length=100)
 
-	def __str__(self):
-		return self.text
-
 
 class OurStoryTitle(models.Model):
 	title = models.TextField()
