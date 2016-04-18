@@ -1,5 +1,14 @@
-{% extends "base.html" %}
 
 {% block content %}
-This is our_team.html
+
+    {% for team in ourteams %}
+        {{ team }}<br>
+    {% endfor %}
+
+    {% for team in ourteams %}
+        {{ team.us_team | linebreaks }}<br>
+        {{ team.peru_team | linebreaks }}<br>
+        {{ team.board_team | linebreaks }}
+    {% endfor %}
+
 {% endblock %}
