@@ -60,32 +60,35 @@ body {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,.navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: #fff;
 }
-
+/*ourstory page css*/
 .ourstorytitle {
-  padding-top: 3em;
+  padding-top: 2em;
+  padding-bottom: 1em;
   margin: 0;
   color: #fff;
   font-weight: 700;
 }
 
 .ourstorypost {
-  height: 500px;
-/*  border: 5px solid black;*/
-}
-
-.storytext,.storytextright {
+  min-height: 500px;
   padding-top: 4em;
   padding-bottom: 3em;
+  padding-left: 3em;
+  padding-right: 2em;
   color: #fff;
 }
 
-.storytext {
-  padding-left: 3em;
-}
-
 .ourstoryimg {
-  padding-top: 25%;
-  max-height: 25%;
+  max-height: 350px;
+  max-width: 70%;
+  margin-top: 2em;
+}
+.storytext {
+  margin-top: 2em;
+  padding-top: 3em;
+  max-height: 300px;
+  max-width: 80%;
+  margin:auto;
 }
 
 /*childrens program page css*/
@@ -127,7 +130,17 @@ body {
   margin-left: 0;
   padding: 0;
 }
+/*ethics page css*/
+.ethicsimage {
+  max-width: 100%;
+  /*max-height: 400px;*/
+}
 
+.ethicstitle {
+  padding-top: 1em;
+  color: blue;
+  font-weight: bold;
+}
 /*flatpages main content*/
 .maincontent {
   margin-top: 10px;
