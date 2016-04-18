@@ -1,5 +1,8 @@
+from django import forms
+from django.core import checks
 from django.contrib import admin
 from .models import OurStory, OurTeam, EduProgram
+from django.forms import TextInput, Textarea
 # Register your models here.
 
 class EduProgramAdmin(admin.ModelAdmin):
@@ -8,13 +11,19 @@ class EduProgramAdmin(admin.ModelAdmin):
 
 
 class OurStoryAdmin(admin.ModelAdmin):
-    fields = ['id','order','text']
-    list_display=('id', 'order', 'text')
+    fields = ['order','text']
+    list_display=('order', 'text')
+
+
+class OurTeamForm(forms.ModelForm):
+    model = OurTeam
+    fields = ['text','us_team', 'peru_team', 'board_team']
 
 
 class OurTeamAdmin(admin.ModelAdmin):
-    fields = ['id', 'text']
-    list_display = ('id', 'text')
+    fields = ['text','us_team', 'peru_team', 'board_team']
+    list_display = ('text','us_team', 'peru_team', 'board_team')
+
 
 admin.site.register(OurStory, OurStoryAdmin)
 admin.site.register(OurTeam, OurTeamAdmin)
