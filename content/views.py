@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import OurStory, OurTeam, EduProgram, EthicalPost
+from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout
 from django.utils import timezone
 
 
@@ -32,3 +32,11 @@ def artisan_program(request):
 def ethical_post(request):
     ethicalpost = EthicalPost.objects.all().order_by('order')
     return render(request, 'content/ethical_page.html', {'ethicalpost': ethicalpost})
+
+def volunteer_peru(request):
+	volunteerabout = VolunteerAbout.objects.all().order_by('order')
+	volunteers = VolunteerPeru.objects.filter(category="volunteers")
+	internships = VolunteerPeru.objects.filter(category="intership")
+	fees = VolunteerPeru.objects.filter(category="fees")
+	positions = VolunteerOpenPosition.objects.all()
+	return render(request, 'content/volunteer_peru.html', {'volunteerabout': volunteerabout, 'volunteers': volunteers, 'internships': internships, 'fees': fees, 'positions': positions})
