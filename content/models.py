@@ -52,12 +52,12 @@ class EduProgram(models.Model):
 		return self.title
 
 class EthicalPost(models.Model):
-	title = models.CharField(blank=True, null=True, max_length=100, help_text="Only enter a title if order is 1. This is the page title.")
+	title = models.CharField(blank=True, null=True, max_length=100, help_text="If the order number is 1, this will be the page title.")
 	img = models.ImageField(upload_to='aboutus',blank=True, null=True, help_text="Upload image corresponding to Text")
 	text = models.TextField(blank=True, null=True, help_text="Enter a short description.")
-	order = models.CharField(max_length=2, help_text="Enter a number. 1 will be at the top of the page")
+	order = models.IntegerField(help_text="Enter a number. 1 will be at the top of the page")
 
 
 
 	def __str__(self):
-		return self.order
+		return self.title
