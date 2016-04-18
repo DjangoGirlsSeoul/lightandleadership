@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import OurStory, OurTeam, EduProgram
+from .models import OurStory, OurTeam, EduProgram, EthicalPost
 from django.utils import timezone
 
 
@@ -26,3 +26,9 @@ def womens_program(request):
 def artisan_program(request):
 	artisanprograms = EduProgram.objects.filter(category="Artisan").order_by('order')
 	return render(request, 'content/artisanprogram.html', {'artisanprograms': artisanprograms })
+
+
+
+def ethical_post(request):
+    ethicalpost = EthicalPost.objects.all().order_by('order')
+    return render(request, 'content/ethical_page.html', {'ethicalpost': ethicalpost})

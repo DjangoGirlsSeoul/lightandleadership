@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import OurStory, OurTeam, EduProgram
+from .models import OurStory, OurTeam, EduProgram, EthicalPost
 from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
@@ -27,7 +27,10 @@ class EduProgramAdmin(admin.ModelAdmin):
     fields = ['category', 'order', 'title', 'img', 'color', 'text']
     list_display = ('title','category', 'order')
 
-
+class EthicalPostAdmin(admin.ModelAdmin):
+    fields = ['order', 'title', 'img', 'text']
+    list_display = ['title', 'order']
 admin.site.register(OurStory)
 admin.site.register(OurTeam)
 admin.site.register(EduProgram, EduProgramAdmin)
+admin.site.register(EthicalPost, EthicalPostAdmin)
