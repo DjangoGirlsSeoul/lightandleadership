@@ -5,11 +5,11 @@
 {% if forloop.first %}
 {% if post.img %}
 <div class="row">
-    <div class="col-md-5 col-md-push-7">
+    <div class="col-md-8 col-md-push-4">
       <img class="center-block img-responsive" src="{{post.img.url}}">
     </div>
 
-    <div class="col-md-7 col-md-pull-5">
+    <div class="col-md-4 col-md-pull-8">
          <h1 class="ethicstitle text-uppercase">{{post.title }}</h1>
         {% if post.text %}
          <div class="center-block volunteertext">{{ post.text|safe }}</div>
