@@ -155,7 +155,7 @@ body {
 .apply {
   padding: 14px;
   background-color: white;
-  color: #8b008b ;
+  border-radius: 5px;
 
 }
 .apply a{
