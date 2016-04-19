@@ -60,6 +60,11 @@ body {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,.navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: #fff;
 }
+
+/*general*/
+.white-text {
+  color: #fff;
+}
 /*ourstory page css*/
 .ourstorytitle {
   padding-top: 2em;
@@ -141,6 +146,27 @@ body {
   color: blue;
   font-weight: bold;
 }
+/*volunteer pages*/
+.positions {
+  background-color: #8b008b;
+  padding:20px;
+}
+.apply {
+  padding: 14px;
+  background-color: white;
+  color: #8b008b ;
+
+}
+.apply a{
+  color: #8b008b;
+}
+.volunteertext {
+  max-width: 850px;
+   margin-left: auto;
+  margin-right: auto;
+  padding:15px;
+}
+
 /*flatpages main content*/
 .maincontent {
   margin-top: 10px;

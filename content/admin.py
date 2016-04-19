@@ -30,10 +30,15 @@ class EduProgramAdmin(admin.ModelAdmin):
 class EthicalPostAdmin(admin.ModelAdmin):
     fields = ['order', 'title', 'img', 'text']
     list_display = ['title', 'order']
+
+class VolunteerPeruAdmin(admin.ModelAdmin):
+    fields = ['category', 'order', 'color', 'title', 'img', 'text']
+    list_display = ('title','category', 'order')
+
 admin.site.register(OurStory)
 admin.site.register(OurTeam)
 admin.site.register(EduProgram, EduProgramAdmin)
 admin.site.register(EthicalPost, EthicalPostAdmin)
 admin.site.register(VolunteerAbout)
-admin.site.register(VolunteerPeru)
+admin.site.register(VolunteerPeru, VolunteerPeruAdmin)
 admin.site.register(VolunteerOpenPosition)

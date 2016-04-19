@@ -6,13 +6,13 @@
 {% if post.img %}
 <div class="row">
     <div class="col-md-5 col-md-push-7">
-      <img class="center-block img-responsive ethicsimage" src="{{post.img.url}}">
+      <img class="center-block img-responsive" src="{{post.img.url}}">
     </div>
 
     <div class="col-md-7 col-md-pull-5">
          <h1 class="ethicstitle text-uppercase">{{post.title }}</h1>
         {% if post.text %}
-         <div class="center-block programtextright">{{ post.text|safe }}</div>
+         <div class="center-block volunteertext">{{ post.text|safe }}</div>
          {% endif %}
     </div>
 </div>
@@ -23,63 +23,161 @@
     </div>
 </div>
     {% endif %}
-</div>
+
 
 <!--  end row 1 -->
-</div>
+
 {% elif not forloop.counter0|divisibleby:2 %}
 <div class="row">
-    <div class="programpost">
-        <div class="col-md-4 col-md-push-8 childrensclass">
+    <div class="">
+        <div class="col-md-4 col-md-push-8 ">
              {%if post.img %}
-            <img class="center-block img-responsive ethicsimage" src="{{post.img.url}}" alt="Generic placeholder image">
+            <img class="center-block img-responsive" src="{{post.img.url}}" alt="Generic placeholder image">
             {% endif %}
         </div>
         <div class="col-md-8 col-md-pull-4 ">
-        <p><strong> {{post.title}}</strong></p>
-            <div class="center-block programtextright">{{ post.text|safe}}</div>
+            <div class="volunteertext">
+                <p><strong> {{post.title}}</strong></p>
+                <div class="center-block">{{ post.text|safe}}</div>
+            </div>
         </div>
     </div>
 </div>
 {% elif forloop.last %}
-<div class="row positionsrow">
-    <h1> These are the positions we need you for</h1>
-{% for position in positions %}
-    <div class="col-md-3">
-    <h3>{{ position.title }}</h3>
-    <p>{{ position.date }}</p>
+<div class="positions">
+    <div class="row">
+    <!-- these should truncate at 4 positions, arrow on right to scroll to more or link to more.  -->
+        <div class="col-md=12">
+            <h1 class="white-text"> These are the positions we need you for</h1>
+        </div>
     </div>
-    {% endfor %}
+    <div class="row">
+    {% for position in positions %}
+        <div class="col-md-3">
+        <h3 class="white-text">{{ position.title }}</h3>
+        <p class="white-text">{{ position.date }}</p>
+        <h3 class="apply text-uppercase text-center"><a href="{{position.link}}">Apply Here</a></h3>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
 <div class="row">
-    <div class="programpost">
-        <div class="col-md-4 col-md-push-8 childrensclass">
+    <div class="">
+        <div class="col-md-4 col-md-push-8 ">
              {%if post.img %}
-            <img class="center-block img-responsive ethicsimage" src="{{post.img.url}}" alt="Generic placeholder image">
+            <img class="center-block img-responsive" src="{{post.img.url}}" alt="Generic placeholder image">
             {% endif %}
         </div>
         <div class="col-md-8 col-md-pull-4 ">
-        <p><strong> {{post.title}}</strong></p>
-            <div class="center-block programtextright">{{ post.text|safe}}</div>
+            <div class="volunteertext">
+                <p><strong> {{post.title}}</strong></p>
+                <div class="center-block">{{ post.text|safe }}</div>
+            </div>
         </div>
     </div>
 </div>
 {% endif %}
 {% else %}
 <div class="row">
-    <div class="programpost">
+    <div class="">
         <div class="col-md-4">
              {%if post.img %}
-            <img class="center-block img-responsive ethicsimage" src="{{post.img.url}}" alt="Generic placeholder image">
+            <img class="center-block img-responsive" src="{{post.img.url}}" alt="Generic placeholder image">
             {% endif %}
         </div>
         <div class="col-md-8">
-            <div class="center-block programtextright">{{ post.text|safe}}</div>
+            <div class="volunteertext">
+                <p><strong> {{post.title}}</strong></p>
+                <div class="center-block">{{ post.text|safe }}</div>
+            </div>
         </div>
     </div>
 </div>
 {% endif %}
 {% endfor %}
+
+{% for post in volunteers %}
+    {% if forloop.first %}
+    <div class="sectiontitle" style="background-color:{{post.color}}">
+        <div class="row">
+            <div class="col-md-4">
+               <img class="center-block img-responsive" src="{{post.img.url}}">
+            </div>
+            <div class="col-md-8">
+                <div class="volunteertext">
+                    <h1 class="white-text">{{ post.title }}</h1>
+                    <div class="white-text"> {{ post.text|safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+        <div class="volunteertext">
+            {% else %}
+                <p><strong>{{ post.title }}</strong></p>
+                <p>{{  post.text|safe }}</p>
+            {% endif %}
+    {% endfor %}
+            </div>
+        </div>
+    </div>
+{% for post in internships %}
+    {% if forloop.first %}
+     <div class="sectiontitle" style="background-color:{{post.color}}">
+    <div class="row">
+            <div class="col-md-4">
+               <img class="center-block img-responsive" src="{{post.img.url}}">
+            </div>
+            <div class="col-md-8">
+               <div class="volunteertext">
+                    <h1 class="white-text">{{ post.title }}</h1>
+                    <div class="white-text"> {{ post.text|safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="volunteertext">
+            {% else %}
+
+                <p><strong>{{ post.title }}</strong></p>
+                <p>{{  post.text|safe }}</p>
+            {% endif %}
+{% endfor %}
+            </div>
+        </div>
+    </div>
+{% for post in fees %}
+    {% if forloop.first %}
+     <div class="sectiontitle" style="background-color:{{post.color}}">
+    <div class="row">
+            <div class="col-md-4">
+               <img class="center-block img-responsive" src="{{post.img.url}}">
+            </div>
+            <div class="col-md-8">
+               <div class="volunteertext">
+                    <h1 class="white-text">{{ post.title }}</h1>
+                    <div class="white-text"> {{ post.text|safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+        <div class="volunteertext">
+            {% else %}
+                <p><strong>{{ post.title }}</strong></p>
+                <p>{{  post.text|safe }}</p>
+            {% endif %}
+    {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
