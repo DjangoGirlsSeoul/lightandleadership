@@ -38,5 +38,5 @@ def volunteer_peru(request):
 	volunteers = VolunteerPeru.objects.filter(category="Volunteers")
 	internships = VolunteerPeru.objects.filter(category="Intership")
 	fees = VolunteerPeru.objects.filter(category="Fees")
-	positions = VolunteerOpenPosition.objects.all()
+	positions = VolunteerOpenPosition.objects.all().order_by('date')
 	return render(request, 'content/volunteer_peru.html', {'volunteerabout': volunteerabout, 'volunteers': volunteers, 'internships': internships, 'fees': fees, 'positions': positions})

@@ -55,7 +55,7 @@
     {% for position in positions %}
         <div class="col-md-3">
         <h3 class="white-text">{{ position.title }}</h3>
-        <p class="white-text">{{ position.date }}</p>
+        <p class="white-text">{{ position.date|date:"D d M Y"}}</p>
         <h3 class="apply text-uppercase text-center"><a href="{{position.link}}">Apply Here</a></h3>
         </div>
         {% endfor %}
