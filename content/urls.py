@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^womensprogram$', views.womens_program, name='womensprogram'),
     url(r'^artisanprogram$', views.artisan_program, name='artisanprogram'),
     url(r'^ethics$', views.ethical_post, name='ethical_page'),
+    url(r'^volunteerperu$', views.volunteer_peru, name='volunteer_peru'),
+
 
 ]
