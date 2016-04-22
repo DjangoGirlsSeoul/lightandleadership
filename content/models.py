@@ -9,8 +9,6 @@ class OurStory(models.Model):
 	color = models.CharField(max_length=20, blank=True)
 	order = models.PositiveIntegerField()
 
-
-
 	def __str__(self):
 		return self.text
 
@@ -29,6 +27,7 @@ class OurStoryTitle(models.Model):
 	def __str__(self):
 		return self.title
 
+
 class EduProgram(models.Model):
 	title = models.CharField(blank=True, null=True, max_length=100)
 	img = models.ImageField(upload_to='education',blank=True, null=True, help_text="Only upload an image if order = 1")
@@ -46,7 +45,6 @@ class EduProgram(models.Model):
 		(ARTISAN, 'Artisan'),
 		)
 	category = models.CharField(max_length=15, choices=POSTCATEGORY, default=CHILDREN)
-
 
 	def __str__(self):
 		return self.title

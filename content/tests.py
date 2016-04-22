@@ -22,16 +22,16 @@ class OurStoryTestCase(TestCase):
 class OurTeamTestCase(TestCase):
     def setUp(self):
 
-        team1 = Ourteam.objects.create(text="team 1", us_team="us_team_us_team_us_team_us_team",peru_team="peru_teamperu_team_peru_team",board_team="board_team")
-        team2 = Ourteam.objects.create(text="team 2", us_team="team_us",peru_team="team_peru",board_team="team_board")
+        team1 = OurTeam.objects.create(text="team 1", us_team="us_team_us_team_us_team_us_team",peru_team="peru_teamperu_team_peru_team",board_team="board_team")
+        team2 = OurTeam.objects.create(text="team 2", us_team="team_us",peru_team="team_peru",board_team="team_board")
 
 
     def test_team_have_text(self):
         """OurStory Test
             Fields tested : text,color
         """
-        team1 = Ourteam.objects.get(text="team 1")
-        team2 = Ourteam.objects.get(text="team 2")
+        team1 = OurTeam.objects.get(text="team 1")
+        team2 = OurTeam.objects.get(text="team 2")
         self.assertEqual(team1.text, 'team 1')
         self.assertEqual(team2.us_team,'team_us')
 
