@@ -12,4 +12,8 @@ urlpatterns = [
     url(r'^ethics$', views.ethical_post, name='ethical_page'),
     url(r'^peru$', views.why_peru, name='peru'),
     url(r'^volunteerperu$', views.volunteer_peru, name='volunteer_peru'),
+    url(r'^financials$', views.financials, name='financials'),
+    url(r'^donations$', views.donations, name='donations'),
+    url(r'^chicago$', views.volunteer_chicago, name='volunteer_chicago'),
 ]
+

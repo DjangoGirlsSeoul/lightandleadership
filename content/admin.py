@@ -18,13 +18,12 @@ class OurTeamAdmin(admin.ModelAdmin):
 
 class EduProgramAdmin(admin.ModelAdmin):
     fields = ['category', 'order', 'title', 'img', 'color', 'text']
-    list_display = ('title','category', 'order')
+    list_display = ('category', 'order','title')
 
 
 class EthicalPostAdmin(admin.ModelAdmin):
     fields = ['order', 'title', 'img', 'text']
-    list_display = ['title', 'order']
-
+    list_display = ('order', 'title' )
 
 class MCEFlatPageForm(FlatpageForm):
 
@@ -45,16 +44,16 @@ class MCEFlatPageAdmin(FlatPageAdmin):
 
 class VolunteerPeruAdmin(admin.ModelAdmin):
     fields = ['category', 'order', 'color', 'title', 'img', 'text']
-    list_display = ('title','category', 'order')
+    list_display = ('category', 'order','title')
 
 class VolunteerOpenPositionAdmin(admin.ModelAdmin):
     list_display = ('title', 'date')
 
 class VolunteerAboutAdmin(admin.ModelAdmin):
-    list_display = ('title', 'order')
+    list_display = ('order', 'title' )
 
 class CustomPageAdmin(admin.ModelAdmin):
-    list_display = ('title','category', 'order')
+    list_display = ('category', 'order','title')
 
 
 admin.site.register(OurStory, OurStoryAdmin)

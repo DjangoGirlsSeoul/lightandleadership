@@ -44,3 +44,15 @@ def volunteer_peru(request):
 def why_peru(request):
     reasons = CustomPage.objects.filter(category="WhyPeru").order_by('order')
     return render(request, 'content/why_peru.html', {'reasons': reasons})
+
+def financials(request):
+	financials = CustomPage.objects.filter(category="Financials").order_by('order')
+	return render(request, 'content/financials.html', {'financials': financials})
+
+def donations(request):
+	donations = CustomPage.objects.filter(category="Donations").order_by('order')
+	return render(request, 'content/donations.html', {'donations': donations})
+
+def volunteer_chicago(request):
+	chicago = CustomPage.objects.filter(category="Chicago").order_by('order')
+	return render(request, 'content/volunteer_chicago.html', {'chicago': chicago})
