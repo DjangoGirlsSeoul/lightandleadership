@@ -60,7 +60,10 @@ body {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,.navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: #fff;
 }
-
+.teamposts {
+  display:block;
+  margin:auto;
+}
 /*general*/
 .white-text {
   color: #fff;

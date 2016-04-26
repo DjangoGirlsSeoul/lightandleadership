@@ -9,7 +9,8 @@ def our_story(request):
 
 
 def our_team(request):
-    return render(request, 'content/our_team.html', {})
+	ourteams = OurTeam.objects.all()
+	return render(request, 'content/our_team.html', {'ourteams': ourteams})
 
 def childrens_program(request):
 	childrensprograms = EduProgram.objects.filter(category="Children").order_by('order')
