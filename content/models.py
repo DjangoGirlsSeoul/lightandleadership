@@ -14,11 +14,11 @@ class OurStory(models.Model):
 
 
 class OurTeam(models.Model):
-	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
+	img = models.ImageField(upload_to='aboutus', blank=True, null=True, help_text="This will be the page title image.")
 	text = tinymce_models.HTMLField()
-	us_team = models.CharField(max_length=100)
-	peru_team = models.CharField(max_length=100)
-	board_team = models.CharField(max_length=100)
+	us_team = models.CharField(max_length=300)
+	peru_team = models.CharField(max_length=300)
+	board_team = models.CharField(max_length=300)
 
 
 class OurStoryTitle(models.Model):

@@ -5,39 +5,39 @@
 {% for team in ourteams %}
 {% if forloop.first %}
 <div class="row">
-    {% if team.img %} <!--  if image 4, 8 col -->
-    <div class="col-md-7 col-md-push-5">
+ <div class="col-md-5  col-md-push-7">
+        {% if team.text %}
+         <h3 class="center-block ourteamtext">{{ team.text|safe}}</h3>
+         {% endif %}
+    </div>
+     {% if team.img %} <!--  if image 4, 8 col -->
+    <div class="col-md-7 col-md-pull-5">
       <img class="center-block img-responsive ethicsimage" src="{{team.img.url}}">
     </div>
-    {% else %}<!-- if no img center the title in the first row -->
+    </div>
+    {% else %}
+   <!-- if no img center the title in the first row -->
     <div class="col-md-12">
         <h1 class="childrenstitle text-center text-uppercase">{{team.text|safe}}</h1>
     </div>
-    </div>
-{% endif %}
-    <div class="col-md-5 col-md-pull-7">
-        {% if team.text %}
-         <div class="center-block programtextright">{{ team.text|safe}}</div>
-         {% endif %}
-    </div>
 </div>
 {% endif %}
+{% endif %}
 <div class="row">
-	<div class="col-md-12 teamposts">
+    	<div class="col-md-12">
+    		<h1 class="ethicstitle text-uppercase text-center">Our Peru Team Members: </h1>
+    		<div class="teamlist">
+    		 <h4>{{ team.us_team | linebreaks }}</h4>
+    		 </div>
+    		<h1 class=" text-uppercase text-center">Our US Team Members: </h1>
+    	 	<div class="teamlist">
+            <h4>{{ team.peru_team | linebreaks }}</h4>
+            </div>
 
-		<h1 class="ethicstitle text-center">Our US Team Members: </h1>
-		<div class="text-center teamlist">
-		 {{ team.us_team | linebreaks }}
-		 </div>
-		<h1 class="ethicstitle text-center">Our Peru Team Members: </h1>
-	 	<div class="text-center teamlist">
-        {{ team.peru_team | linebreaks }}
-        </div>
-
-        <h1 class="ethicstitle text-center">Our Board Team Members:</h1>
-        <div class="text-center teamlist">
-        {{ team.board_team | linebreaks }}
-        </div>
+            <h1 class=" text-uppercase text-center">Our Board Team Members:</h1>
+            <div class="teamlist">
+            <h4>{{ team.board_team | linebreaks }}</h4>
+            </div>
 	</div>
 </div>
     {% endfor %}

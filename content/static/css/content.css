@@ -60,10 +60,7 @@ body {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,.navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: #fff;
 }
-.teamposts {
-  display:block;
-  margin:auto;
-}
+
 /*general*/
 .white-text {
   color: #fff;
@@ -98,7 +95,21 @@ body {
   max-width: 80%;
   margin:auto;
 }
+/*ourteam page*/
+.teamposts {
+  display:block;
+  margin:auto;
+  max-width: 60%;
+}
+.teamlist {
+  max-width: 30%;
+  display:block;
+  margin:auto;
+}
 
+.ourteamtext {
+  padding: 30px;
+}
 /*childrens program page css*/
 .programpost {
   min-height: 350px;
