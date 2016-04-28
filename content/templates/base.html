@@ -73,14 +73,30 @@
         <footer class="footer">
             <div class="container">
                 <div class="row">
+                {% for item in footer %}
+                {% if item.img %}
+                    <div class="col-md-6">
+                         <img class="img-responsive " src="{{ item.img.url }}">
+                    </div>
+                    <div class="col-md-6">
+                        <p>Follow us</p>
+                        <ul class="text-muted text-right list-inline" style="none">
+                            <li><a href="{{item.facebooklink"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="item.instagramlink" class="instagram"> <span><i class="fa fa-instagram" alt ="instagram"></i></span></a></li>
+                            <li><a href="item.twitterlink" class="twitter"> <span><i class="fa fa-twitter" alt ="Twitter"></i></span></a></li>
+                        </ul>
+                    </div>
+                    {% else %}
                     <div class="col-md-12">
                         <p>Follow us</p>
                         <ul class="text-muted text-right list-inline" style="none">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#" class="instagram"> <span><i class="fa fa-instagram" alt ="instagram"></i></span></a></li>
-                            <li><a href="https://twitter.com/lliperu" class="twitter"> <span><i class="fa fa-twitter" alt ="Twitter"></i></span></a></li>
+                            <li><a href="{{item.facebooklink"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="item.instagramlink" class="instagram"> <span><i class="fa fa-instagram" alt ="instagram"></i></span></a></li>
+                            <li><a href="item.twitterlink" class="twitter"> <span><i class="fa fa-twitter" alt ="Twitter"></i></span></a></li>
                         </ul>
                     </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </footer>
