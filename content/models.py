@@ -120,7 +120,10 @@ class FooterInfo(models.Model):
 	img = models.ImageField(upload_to='volunteer',blank=True, null=True, help_text="Upload image for footer")
 	title = models.CharField(blank=True, null=True, max_length=100, help_text="Enter Footer Title")
 	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description.")
-	learnmorelink = models.URLField(default="#")
+	learnmorelink = models.CharField(default="#", max_length=200)
 	facebooklink =  models.URLField(default="#")
 	twitterlink = models.URLField(default="#")
 	instagramlink = models.URLField(default="#")
+
+	def __str__(self):
+		return self.title
