@@ -12,6 +12,12 @@ class OurStory(models.Model):
 	def __str__(self):
 		return self.text
 
+class Home(models.Model):
+	title = models.CharField(blank=True, null=True, max_length=100)
+	color = models.CharField(max_length=20, blank=True, help_text="Only enter a color if the order >= 2. Both 'red' and '#FF0000' are accceptable")
+	order = models.PositiveIntegerField()
+	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
+	text = tinymce_models.HTMLField(default="")
 
 class OurTeam(models.Model):
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True)

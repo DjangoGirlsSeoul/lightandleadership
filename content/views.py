@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage
+from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage,Home
 from django.utils import timezone
 
 
 def our_story(request):
     ourstory = OurStory.objects.all().order_by('order')
     return render(request, 'content/our_story.html', {'ourstory': ourstory})
-
 
 def our_team(request):
     return render(request, 'content/our_team.html', {})
@@ -26,8 +25,6 @@ def womens_program(request):
 def artisan_program(request):
 	artisanprograms = EduProgram.objects.filter(category="Artisan").order_by('order')
 	return render(request, 'content/artisanprogram.html', {'artisanprograms': artisanprograms })
-
-
 
 def ethical_post(request):
     ethicalpost = EthicalPost.objects.all().order_by('order')
@@ -56,3 +53,7 @@ def donations(request):
 def volunteer_chicago(request):
 	chicago = CustomPage.objects.filter(category="Chicago").order_by('order')
 	return render(request, 'content/volunteer_chicago.html', {'chicago': chicago})
+
+def home(request):
+    home = Home.objects.all().order_by('order')
+    return render(request, 'content/home.html', {'home': home})
