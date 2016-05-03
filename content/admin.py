@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage,Home
+
+from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage, FooterInfo
 from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
@@ -67,6 +68,7 @@ admin.site.register(VolunteerPeru, VolunteerPeruAdmin)
 admin.site.register(VolunteerOpenPosition, VolunteerOpenPositionAdmin)
 admin.site.register(CustomPage, CustomPageAdmin)
 admin.site.register(Home, HomeAdmin)
+admin.site.register(FooterInfo)
 
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, MCEFlatPageAdmin)
