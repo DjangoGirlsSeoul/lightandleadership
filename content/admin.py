@@ -11,9 +11,6 @@ class OurStoryAdmin(admin.ModelAdmin):
     fields = ['order', 'img', 'text']
     list_display=('order','img','text')
 
-class HomeAdmin(admin.ModelAdmin):
-    fields = ['title','color','order','img','text']
-    list_display=('title','color','order','img','text')
 
 class OurTeamAdmin(admin.ModelAdmin):
     form = OurTeamForm
