@@ -98,7 +98,21 @@ body {
   max-width: 80%;
   margin:auto;
 }
+/*ourteam page*/
+.teamposts {
+  display:block;
+  margin:auto;
+  max-width: 60%;
+}
+.teamlist {
+  max-width: 30%;
+  display:block;
+  margin:auto;
+}
 
+.ourteamtext {
+  padding: 30px;
+}
 /*childrens program page css*/
 .programpost {
   min-height: 350px;
