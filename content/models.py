@@ -12,6 +12,12 @@ class OurStory(models.Model):
 	def __str__(self):
 		return self.text
 
+class Home(models.Model):
+	title = models.CharField(blank=True, null=True, max_length=100)
+	color = models.CharField(max_length=20, blank=True, help_text="Only enter a color if the order >= 2. Both 'red' and '#FF0000' are accceptable")
+	order = models.PositiveIntegerField()
+	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
+	text = tinymce_models.HTMLField(default="")
 
 class OurTeam(models.Model):
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True, help_text="This will be the page title image.")
@@ -112,6 +118,18 @@ class CustomPage(models.Model):
 	title = models.CharField(blank=True, null=True, max_length=100, help_text="If the order number is 1, this will be the page title.")
 	img = models.ImageField(upload_to='volunteer',blank=True, null=True, help_text="Upload image corresponding to Text")
 	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description.")
+
+	def __str__(self):
+		return self.title
+
+class FooterInfo(models.Model):
+	img = models.ImageField(upload_to='volunteer',blank=True, null=True, help_text="Upload image for footer")
+	title = models.CharField(blank=True, null=True, max_length=100, help_text="Enter Footer Title")
+	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description.")
+	learnmorelink = models.CharField(default="#", max_length=200)
+	facebooklink =  models.URLField(default="#")
+	twitterlink = models.URLField(default="#")
+	instagramlink = models.URLField(default="#")
 
 	def __str__(self):
 		return self.title

@@ -7,11 +7,10 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Optional theme -->
-        <link rel="shortcut icon" type="image/x-icon" href="images/favicon(1).ico" />
         <!--fonts and icons-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <!--to get lato font-->
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,100' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,200,100' rel='stylesheet' type='text/css'>
         <!--bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Optional theme -->
@@ -71,16 +70,119 @@
             {% endblock %}
         </div>
         <footer class="footer">
-            <div class="container">
+            <div class="container main big-footer">
                 <div class="row">
-                    <div class="col-md-12">
-                        <p>Follow us</p>
-                        <ul class="text-muted text-right list-inline" style="none">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#" class="instagram"> <span><i class="fa fa-instagram" alt ="instagram"></i></span></a></li>
-                            <li><a href="https://twitter.com/lliperu" class="twitter"> <span><i class="fa fa-twitter" alt ="Twitter"></i></span></a></li>
-                        </ul>
+                {% for item in footer %}
+                {% if item.img %}
+                    <div class="col-md-4">
+                         <img class="img-responsive footer-img" src="{{ item.img.url }}">
                     </div>
+                    <div class="col-md-8">
+                        <div class="footer-text">
+                            <h1 class="blue thin">{{ item.title }}</h1>
+                            <h3 class="thin">{{ item.text|safe }}</h3>
+                            <div class="text-center learnmore">
+                                <a href="{{item.learnmorelink}}" class="btn btn-primary btn-lg" role="button">Learn More</a>
+                            </div>
+                            <h3> Follow Us!</h3>
+                            <ul class="text-muted text-center list-inline" style="none">
+
+                                <li><a href="{{item.facebooklink}}">
+                                <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle blue fa-stack-2x"></i>
+                                  <span>
+                                  <i class="fa fa-facebook gray-shadow fa-stack-1x" ></i></span>
+                                  </a></li>
+                                </span>
+
+                                <li><a href="{{item.twitterlink}}" class="twitter">
+                                <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle twitter-blue fa-stack-2x"></i>
+                                  <span><i class="gray-shadow fa-stack-1x fa fa-twitter" alt ="Twitter"></i></span></a></li>
+                                </span>
+
+                                <li><a href="{{item.instagramlink}}" class="instagram">
+                                <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle instagram-brown fa-stack-2x"></i>
+                                   <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
+                                </span>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {% else %}
+                    <div class="col-md-12">
+                        <div class="footer-text">
+                            <h1 class="blue">{{ item.title }}</h1>
+                            <h3>{{ item.text|safe }}</h3>
+                            <div class="text-center learnmore">
+                                <a href="{{item.learnmorelink}}" class="btn btn-primary btn-lg" role="button">Learn More</a>
+                            </div>
+                            <h3> Follow Us!</h3>
+                            <ul class="text-muted text-center list-inline" style="none">
+
+                                <li><a href="{{item.facebooklink}}">
+                                <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle blue fa-stack-2x"></i>
+                                  <span>
+                                  <i class="fa fa-facebook gray-shadow fa-stack-1x" ></i></span>
+                                  </a></li>
+                                </span>
+
+                                <li><a href="{{item.twitterlink}}" class="twitter">
+                                <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle twitter-blue fa-stack-2x"></i>
+                                  <span><i class="gray-shadow fa-stack-1x fa fa-twitter" alt ="Twitter"></i></span></a></li>
+                                </span>
+
+                                <li><a href="{{item.instagramlink}}" class="instagram">
+                                <span class="fa-stack fa-4x">
+                                  <i class="fa fa-circle instagram-brown fa-stack-2x"></i>
+                                   <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
+                                </span>
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+                    </div>
+                <div class="container main small-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-text">
+                            {% for item in footer %}
+                                <h1 class="blue">{{ item.title }}</h1>
+                                <div class="">{{ item.text|safe }}</div>
+                                <div class="text-center">
+                                    <a href="{{item.learnmorelink}}" class="btn btn-primary btn-lg" role="button">Learn More</a>
+                                </div>
+                                <h3> Follow Us!</h3>
+                                <ul class="text-muted text-center list-inline" style="none">
+
+                                    <li><a href="{{item.facebooklink}}">
+                                    <span class="fa-stack fa-3x">
+                                      <i class="fa fa-circle blue fa-stack-2x"></i>
+                                      <span>
+                                      <i class="fa fa-facebook gray-shadow fa-stack-1x" ></i></span>
+                                      </a></li>
+                                    </span>
+
+                                    <li><a href="{{item.twitterlink}}" class="twitter">
+                                    <span class="fa-stack fa-3x">
+                                      <i class="fa fa-circle twitter-blue fa-stack-2x"></i>
+                                      <span><i class="gray-shadow fa-stack-1x fa fa-twitter" alt ="Twitter"></i></span></a></li>
+                                    </span>
+
+                                    <li><a href="{{item.instagramlink}}" class="instagram">
+                                    <span class="fa-stack fa-3x">
+                                      <i class="fa fa-circle instagram-brown fa-stack-2x"></i>
+                                       <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
+                                    </span>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
                 </div>
             </div>
         </footer>
