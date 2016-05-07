@@ -10,12 +10,12 @@
     </div>
     {% else %}<!-- if no img center the title in the first row -->
     <div class="col-md-12">
-        <h1 class="childrenstitle text-center text-uppercase">{{post.title}}</h1>
+        <h1 class="ethicstitle text-center text-uppercase">{{post.title}}</h1>
     </div>
     </div>
 {% endif %}
     <div class="col-md-5 col-md-pull-7">
-         <h1 class="ethicstitle text-uppercase">{{post.title}}</h1>
+         <h1 class="ethicstitle text-center text-uppercase">{{post.title}}</h1>
         {% if post.text %}
          <div class="center-block programtextright">{{ post.text|safe}}</div>
          {% endif %}

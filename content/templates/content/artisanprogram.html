@@ -5,20 +5,23 @@
 {% if forloop.first %}
 <div class="row">
     {% if program.img %} <!--  if image 4, 8 col -->
-    <div class="col-md-4">
-        <h1 class="childrenstitle text-center text-uppercase">{{program.title}}</h1>
-    </div>
-    <div class="col-md-8">
-        <img class="center-block img-responsive programimg" src="{{program.img.url}}">
+    <div class="col-md-7 col-md-push-5">
+      <img class="center-block img-responsive ethicsimage" src="{{ program.img.url}}">
     </div>
     {% else %}<!-- if no img center the title in the first row -->
     <div class="col-md-12">
-        <h1 class="childrenstitle text-center text-uppercase">{{program.title}}</h1>
+        <h1 class="ethicstitle text-center text-uppercase">{{ program.title }}</h1>
+    </div>
+    </div>
+    {% endif %}
+    <div class="col-md-5 col-md-pull-7">
+         <h1 class="ethicstitle text-center text-uppercase">{{ program.title}}</h1>
+        {% if program.text %}
+         <div class="center-block programtextright">{{ program.text|safe}}</div>
+         {% endif %}
     </div>
 </div>
-{% endif %}
-<!--  end row 1 -->
-</div>
+
 {% else %}
 <div class="row">
     <div class="programpost">

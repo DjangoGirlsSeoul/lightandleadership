@@ -130,11 +130,11 @@ body {
   float: right;
 }
 
-.childrenstitle {
+/*.childrenstitle {
   padding-top: 4em;
   color: blue;
   font-weight: 700;
-}
+}*/
 
 .programtextright {
   padding: 2em;
@@ -150,16 +150,16 @@ body {
   width: 100%;
   margin-right: 0;
   margin-left: 0;
-  /*padding: 0;*/
+  padding: 0;
 }
 /*ethics page css*/
 .ethicsimage {
-  max-width: 100%;
-  /*max-height: 400px;*/
+  width: 100%;
 }
 
 .ethicstitle {
-  padding: 1em;
+  /*padding: 1em;*/
+  /*padding-top: 4em;*/
   padding-bottom:0;
   color: blue;
   font-weight: bold;
@@ -315,6 +315,9 @@ body {
   .footer-text {
     padding: 10px;
   }
+  .ethicsimage {
+    height: 400px;
+  }
 }
 
 @media(max-width: 786px) {
@@ -329,6 +332,9 @@ body {
 
   .small-footer{
     display:block;
+  }
+  .ethicsimage {
+    height: 450px;
   }
 }
 
@@ -347,6 +353,9 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
+  .ethicsimage {
+    height: 450px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -355,5 +364,11 @@ body {
   }
   .small-footer {
     display: none;
+  }
+  .ethicstitle {
+    padding-top: 4em;
+  }
+  .ethicsimage {
+    height: 450px;
   }
 }
