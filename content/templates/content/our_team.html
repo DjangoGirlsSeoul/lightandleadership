@@ -6,33 +6,32 @@
 <div class="row">
 {% if team.img %} <!--  if image 4, 8 col -->
     <div class="col-md-7 ">
-        <img class="center-block img-responsive ethicsimage" src="{{team.img.url}}">
+        <img class="center-block img-responsive ethics-image" src="{{ team.img.url }}">
+    </div>
+    <div class="col-md-5">
+    {% if team.text %}
+        <h3 class="ethics-title center-block text-center">{{ team.text | safe }}</h3>
+    {% endif %}
     </div>
     {% else %} <!-- if no img center the title in the first row -->
     <div class="col-md-12">
-        <h1 class="ethicstitle text-center text-uppercase">{{ team.text | safe }}</h1>
+        <h1 class="ethics-title text-center text-uppercase">{{ team.text | safe }}</h1>
     </div>
-</div> <!-- ending first row -->
     {% endif %}
-    <div class="col-md-5">
-    {% if team.text %}
-        <h3 class="center-block text-center">{{ team.text | safe }}</h3>
-    {% endif %}
-    </div>
 </div>
 {% endif %}
 <div class="row">
     <div class="col-md-12">
-        <h1 class=" text-uppercase text-center">Our Peru Team Members:</h1>
-        <div class="teamlist">
+        <h1 class="text-uppercase text-center">Our Peru Team Members:</h1>
+        <div class="team-list">
             <h4>{{ team.us_team | linebreaks }}</h4>
         </div>
-        <h1 class=" text-uppercase text-center">Our US Team Members:</h1>
-        <div class="teamlist">
+        <h1 class="text-uppercase text-center">Our US Team Members:</h1>
+        <div class="team-list">
             <h4>{{ team.peru_team | linebreaks }}</h4>
         </div>
-        <h1 class=" text-uppercase text-center">Our Board Team Members:</h1>
-        <div class="teamlist">
+        <h1 class="text-uppercase text-center">Our Board Team Members:</h1>
+        <div class="team-list">
             <h4>{{ team.board_team | linebreaks }}</h4>
         </div>
     </div>
