@@ -10,16 +10,16 @@
     </div>
 
     <div class="col-md-4 col-md-pull-8">
-         <h1 class="ethicstitle text-uppercase">{{post.title }}</h1>
+        <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
         {% if post.text %}
-         <div class="center-block volunteertext">{{ post.text|safe }}</div>
-         {% endif %}
+        <div class="center-block volunteer-text">{{ post.text | safe }}</div>
+        {% endif %}
     </div>
 </div>
         {% else %}<!-- if no img center the title in the first row -->
 <div class="row">
     <div class="col-md-12">
-        <h1 class="ethicstitle text-center text-uppercase">{{post.title }}</h1>
+        <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
     </div>
 </div>
     {% endif %}
@@ -32,13 +32,13 @@
     <div class="">
         <div class="col-md-4 col-md-push-8 ">
              {%if post.img %}
-            <img class="center-block img-responsive" src="{{post.img.url}}" alt="Generic placeholder image">
+            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
             {% endif %}
         </div>
         <div class="col-md-8 col-md-pull-4 ">
-            <div class="volunteertext">
-                <p><strong> {{post.title}}</strong></p>
-                <div class="center-block">{{ post.text|safe}}</div>
+            <div class="volunteer-text">
+                <p><strong> {{ post.title }}</strong></p>
+                <div class="center-block">{{ post.text | safe }}</div>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
 <div class="positions">
     <div class="row">
     <!-- these should truncate at 4 positions, arrow on right to scroll to more or link to more.  -->
-        <div class="col-md=12">
+        <div class="col-md-12">
             <h1 class="white-text"> These are the positions we need you for</h1>
         </div>
     </div>
@@ -55,8 +55,8 @@
     {% for position in positions %}
         <div class="col-md-3">
         <h3 class="white-text">{{ position.title }}</h3>
-        <p class="white-text">{{ position.date|date:"D d M Y"}}</p>
-        <h3 class="apply text-uppercase text-center"><a href="{{position.link}}">Apply Here</a></h3>
+        <p class="white-text">{{ position.date|date:"D d M Y" }}</p>
+        <h3 class="apply text-uppercase text-center"><a href="{{ position.link }}">Apply Here</a></h3>
         </div>
         {% endfor %}
     </div>
@@ -66,13 +66,13 @@
     <div class="">
         <div class="col-md-4 col-md-push-8 ">
              {%if post.img %}
-            <img class="center-block img-responsive" src="{{post.img.url}}" alt="Generic placeholder image">
+            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
             {% endif %}
         </div>
         <div class="col-md-8 col-md-pull-4 ">
-            <div class="volunteertext">
-                <p><strong> {{post.title}}</strong></p>
-                <div class="center-block">{{ post.text|safe }}</div>
+            <div class="volunteer-text">
+                <p><strong> {{ post.title }}</strong></p>
+                <div class="center-block">{{ post.text | safe }}</div>
             </div>
         </div>
     </div>
@@ -82,14 +82,14 @@
 <div class="row">
     <div class="">
         <div class="col-md-4">
-             {%if post.img %}
-            <img class="center-block img-responsive" src="{{post.img.url}}" alt="Generic placeholder image">
+             {% if post.img %}
+            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
             {% endif %}
         </div>
         <div class="col-md-8">
-            <div class="volunteertext">
-                <p><strong> {{post.title}}</strong></p>
-                <div class="center-block">{{ post.text|safe }}</div>
+            <div class="volunteer-text">
+                <p><strong> {{ post.title }}</strong></p>
+                <div class="center-block">{{ post.text | safe }}</div>
             </div>
         </div>
     </div>
@@ -99,15 +99,15 @@
 
 {% for post in volunteers %}
     {% if forloop.first %}
-    <div class="sectiontitle" style="background-color:{{post.color}}">
+    <div class="section-title" style="background-color:{{ post.color }}">
         <div class="row">
             <div class="col-md-4">
-               <img class="center-block img-responsive" src="{{post.img.url}}">
+               <img class="center-block img-responsive" src="{{ post.img.url }}">
             </div>
             <div class="col-md-8">
-                <div class="volunteertext">
+                <div class="volunteer-text">
                     <h1 class="white-text">{{ post.title }}</h1>
-                    <div class="white-text"> {{ post.text|safe }}</div>
+                    <div class="white-text"> {{ post.text | safe }}</div>
                 </div>
             </div>
         </div>
@@ -115,10 +115,10 @@
 
     <div class="row">
         <div class="col-md-12">
-        <div class="volunteertext">
+        <div class="volunteer-text">
             {% else %}
                 <p><strong>{{ post.title }}</strong></p>
-                <p>{{  post.text|safe }}</p>
+                <p>{{  post.text | safe }}</p>
             {% endif %}
     {% endfor %}
             </div>
@@ -126,15 +126,15 @@
     </div>
 {% for post in internships %}
     {% if forloop.first %}
-     <div class="sectiontitle" style="background-color:{{post.color}}">
+     <div class="section-title" style="background-color:{{ post.color }}">
     <div class="row">
             <div class="col-md-4">
-               <img class="center-block img-responsive" src="{{post.img.url}}">
+               <img class="center-block img-responsive" src="{{ post.img.url }}">
             </div>
             <div class="col-md-8">
-               <div class="volunteertext">
+               <div class="volunteer-text">
                     <h1 class="white-text">{{ post.title }}</h1>
-                    <div class="white-text"> {{ post.text|safe }}</div>
+                    <div class="white-text"> {{ post.text | safe }}</div>
                 </div>
             </div>
         </div>
@@ -142,11 +142,11 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="volunteertext">
+            <div class="volunteer-text">
             {% else %}
 
                 <p><strong>{{ post.title }}</strong></p>
-                <p>{{  post.text|safe }}</p>
+                <p>{{  post.text | safe }}</p>
             {% endif %}
 {% endfor %}
             </div>
@@ -154,15 +154,15 @@
     </div>
 {% for post in fees %}
     {% if forloop.first %}
-     <div class="sectiontitle" style="background-color:{{post.color}}">
+     <div class="section-title" style="background-color:{{ post.color }}">
     <div class="row">
             <div class="col-md-4">
-               <img class="center-block img-responsive" src="{{post.img.url}}">
+               <img class="center-block img-responsive" src="{{ post.img.url }}">
             </div>
             <div class="col-md-8">
-               <div class="volunteertext">
+               <div class="volunteer-text">
                     <h1 class="white-text">{{ post.title }}</h1>
-                    <div class="white-text"> {{ post.text|safe }}</div>
+                    <div class="white-text"> {{ post.text | safe }}</div>
                 </div>
             </div>
         </div>
@@ -170,10 +170,10 @@
 
     <div class="row">
         <div class="col-md-12">
-        <div class="volunteertext">
+        <div class="volunteer-text">
             {% else %}
                 <p><strong>{{ post.title }}</strong></p>
-                <p>{{  post.text|safe }}</p>
+                <p>{{  post.text | safe }}</p>
             {% endif %}
     {% endfor %}
             </div>
