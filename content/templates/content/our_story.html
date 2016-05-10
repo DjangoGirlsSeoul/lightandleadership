@@ -8,11 +8,11 @@
         {% if forloop.first %}
         <h1 class="our-story-title text-center text-uppercase">Our Story</h1>
         {% endif %}
-        <div class="col-md-6">
-            <h3 class="center-block story-text">{{ story.text | safe }}</h3>
+        <div class="col-md-6 col-md-push-6">
+            {%if story.img %}<img class="center-block img-responsive our-story-img"  src="{{ story.img.url }}" alt="Generic placeholder image">{% endif %}
         </div>
-        <div class="col-md-6">
-            {%if story.img %}<img class="center-block img-responsive our-story-img"  src="{{ story.img.url }}" alt="Generic placeholder image" width="140" height="140">{% endif %}
+        <div class="col-md-6 col-md-pull-6">
+            <h3 class="center-block story-text">{{ story.text | safe }}</h3>
         </div>
     </div>
 </div>
@@ -21,7 +21,7 @@
     <div class="our-story-post" style="background-color:{{ story.color }}">
         <div class="col-md-6">
             {%if story.img %}
-            <img class="center-block img-responsive our-story-img" src="{{ story.img.url }}" alt="Generic placeholder image" width="140" height="140">
+            <img class="center-block img-responsive our-story-img" src="{{ story.img.url }}" alt="Generic placeholder image">
             {% endif %}
         </div>
         <div class="col-md-6">
