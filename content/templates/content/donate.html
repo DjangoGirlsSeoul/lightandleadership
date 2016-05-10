@@ -1,31 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-{% for post in donate %}
-{% if not post.color %}
-{% if forloop.counter0|divisibleby:2 %}
+{% for post in donateabout %}
+
 {% if forloop.first %}
-    {% if post.img %}
+{% if post.img %}
 <div class="row">
-    <div class="col-md-7 col-md-push-5">
+    <div class="col-md-8 col-md-push-4">
       <img class="center-block img-responsive ethics-image" src="{{post.img.url}}">
     </div>
 
-    <div class="col-md-5 col-md-pull-7">
+    <div class="col-md-4 col-md-pull-8">
         <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
         {% if post.text %}
         <div class="center-block volunteer-text">{{ post.text | safe }}</div>
         {% endif %}
     </div>
 </div>
-    {% else %}<!-- if no img center the title in the first row -->
+        {% else %}<!-- if no img center the title in the first row -->
 <div class="row">
     <div class="col-md-12">
         <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
     </div>
 </div>
-    {% endif %} <!--end img loop-->
+    {% endif %}<!-- end if first loop-->
 
-{% else %} <!-- elif not not first loop-->
+
+<!--  end row 1 -->
+
+{% elif  forloop.counter0|divisibleby:2 %}
 <div class="row">
     <div class="">
         <div class="col-md-4 col-md-push-8 ">
@@ -42,8 +44,7 @@
     </div>
 </div>
 
-{% endif %} <!-- end first loop if statment -->
-{% else %} <!-- elif not divided by 2 -->
+{% elif not forloop.counter0|divisibleby:2 %}
 <div class="row">
     <div class="">
         <div class="col-md-4">
@@ -59,64 +60,94 @@
         </div>
     </div>
 </div>
-{% endif %}<!-- end if not /2  -->
-{% elif post.color %} <!-- if color -->
 
+{% endif %}
+{% endfor %}
 
+{% for post in donate %}
+    {% if forloop.first %}
     <div class="section-title" style="background-color:{{ post.color }}">
         <div class="row">
             <div class="col-md-4">
-            {% if post.img %}
                <img class="center-block img-responsive" src="{{ post.img.url }}">
-            {% endif %}
             </div>
             <div class="col-md-8">
                 <div class="volunteer-text">
                     <h1 class="white-text">{{ post.title }}</h1>
+                    <div class="white-text"> {{ post.text | safe }}</div>
                 </div>
-
             </div>
         </div>
     </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="volunteer-text">
-                    <p>{{  post.text | safe }}</p>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-    {% if forloop.last %}
-    <div class="section-title" style="background-color:{{ post.color }}">
-        <div class="row">
-            <div class="col-md-6">
 
-            </div>
-            <div class="col-md-6">
-                <div class="volunteer-text">
-                    <h1 class="white-text">Paypal link </h1>
-                    <h1 class="white-text">Donate Link</h1>
-                </div>
-
-            </div>
-        </div>
-    </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="volunteer-text">
-                    <p>{{  post.text | safe }}</p>
-                </div>
-            </div>
-        </div>
-
-   {% endif %}<!--end if color statment -->
-
-
-
-
+    <div class="row">
+        <div class="col-md-12">
+        <div class="volunteer-text">
+            {% else %}
+                <p><strong>{{ post.title }}</strong></p>
+                <p>{{  post.text | safe }}</p>
+            {% endif %}
     {% endfor %}
+            </div>
+        </div>
+    </div>
+{% for post in club %}
+    {% if forloop.first %}
+     <div class="section-title" style="background-color:{{ post.color }}">
+    <div class="row">
+            <div class="col-md-4">
+               <img class="center-block img-responsive" src="{{ post.img.url }}">
+            </div>
+            <div class="col-md-8">
+               <div class="volunteer-text">
+                    <h1 class="white-text">{{ post.title }}</h1>
+                    <div class="white-text"> {{ post.text | safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="volunteer-text">
+            {% else %}
+
+                <p><strong>{{ post.title }}</strong></p>
+                <p>{{  post.text | safe }}</p>
+            {% endif %}
+{% endfor %}
+            </div>
+        </div>
+    </div>
+{% for post in paypal %}
+    {% if forloop.first %}
+     <div class="section-title" style="background-color:{{ post.color }}">
+    <div class="row">
+            <div class="col-md-4">
+               <img class="center-block img-responsive" src="{{ post.img.url }}">
+            </div>
+            <div class="col-md-8">
+               <div class="volunteer-text">
+                    <h1 class="white-text">{{ post.title }}</h1>
+                    <div class="white-text"> {{ post.text | safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+        <div class="volunteer-text">
+            {% else %}
+                <p><strong>{{ post.title }}</strong></p>
+                <p>{{  post.text | safe }}</p>
+            {% endif %}
+    {% endfor %}
+            </div>
             <div class="text-center">
              <button type="button" class="btn-lg btn-primary" href="#">Donate Now!</button>
              </div>
+        </div>
+    </div>
 {% endblock %}
 
