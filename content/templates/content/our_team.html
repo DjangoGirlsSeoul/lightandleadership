@@ -9,8 +9,11 @@
         <img class="center-block img-responsive ethics-image" src="{{ team.img.url }}">
     </div>
     <div class="col-md-5">
+    {% if team.title %}
+        <h1 class="ethics-title center-block text-center">{{ team.title | safe }}</h1>
+    {% endif %}
     {% if team.text %}
-        <h3 class="ethics-title center-block text-center">{{ team.text | safe }}</h3>
+        <p class="center-block text-center">{{ team.text | safe }}</p>
     {% endif %}
     </div>
     {% else %} <!-- if no img center the title in the first row -->
