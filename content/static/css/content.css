@@ -87,15 +87,15 @@ body {
 }
 
 .our-story-img {
-  max-height: 350px;
-  max-width: 70%;
+  max-height: 250px;
+  max-width: 250px;
+  display: block;
+  margin: auto;
   margin-top: 2em;
 }
 .story-text {
   margin-top: 2em;
   padding-top: 3em;
-  max-height: 300px;
-  max-width: 80%;
   margin:auto;
 }
 /*ourteam page*/

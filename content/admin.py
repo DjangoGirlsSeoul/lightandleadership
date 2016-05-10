@@ -14,7 +14,7 @@ class OurStoryAdmin(admin.ModelAdmin):
 
 class OurTeamAdmin(admin.ModelAdmin):
     form = OurTeamForm
-    list_display = ('text','us_team', 'peru_team', 'board_team')
+    list_display = ('title','us_team', 'peru_team', 'board_team')
 
 class EduProgramAdmin(admin.ModelAdmin):
     fields = ['category', 'order', 'title', 'img', 'color', 'text']
