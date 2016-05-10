@@ -28,7 +28,7 @@
             {% if story.title %}
             <h1>{{ story.title }}</h1>
             {% endif %}
-            <h3 class="center-block story-text-right">{{ story.text }}</h3>
+            <h3 class="center-block story-text-right">{{ story.text | safe  }}</h3>
         </div>
     </div>
 </div>
