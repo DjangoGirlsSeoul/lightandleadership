@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage, Home, DonateInfo, DonateSection
+from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage, Home, DonateSection
 from django.utils import timezone
 
 
@@ -63,7 +63,7 @@ def home(request):
     return render(request, 'content/home.html', {'home': home})
 
 def donate(request):
-	donateabout = DonateInfo.objects.all().order_by('order')
+	donateabout = DonateSection.objects.filter(category='AboutUs').order_by('order')
 	donate = DonateSection.objects.filter(category='Donate').order_by('order')
 	club = DonateSection.objects.filter(category='Club').order_by('order')
 	paypal = DonateSection.objects.filter(category='Paypal').order_by('order')
