@@ -136,15 +136,6 @@ class FooterInfo(models.Model):
 	def __str__(self):
 		return self.title
 
-# class DonateInfo(models.Model):
-# 	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top of the page")
-# 	title = models.CharField(blank=True, null=True, max_length=100, help_text="If the order number is 1, this will be the section title.")
-# 	img = models.ImageField(upload_to='action',blank=True, null=True, help_text="Upload image corresponding to Text")
-# 	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
-
-# 	def __str__(self):
-# 		return self.title
-
 class DonateSection(models.Model):
 	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top")
 	color = models.CharField(max_length=20, blank=True, help_text="This is the background color for section titles, Only needed if order = 1.")
