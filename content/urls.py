@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^financials$', views.financials, name='financials'),
     url(r'^donations$', views.donations, name='donations'),
     url(r'^chicago$', views.volunteer_chicago, name='volunteer_chicago'),
+    url(r'^donate$', views.donate, name='donate'),
 ]
