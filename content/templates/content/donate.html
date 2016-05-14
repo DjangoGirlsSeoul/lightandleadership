@@ -27,12 +27,12 @@
 
 <!--  end row 1 -->
 
-{% elif  forloop.counter0|divisibleby:2 %}
+{% elif forloop.counter0|divisibleby:2 %}
 <div class="row">
     <div class="">
         <div class="col-md-4 col-md-push-8 ">
              {%if post.img %}
-            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
+            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="School Image">
             {% endif %}
         </div>
         <div class="col-md-8 col-md-pull-4 ">
@@ -44,12 +44,12 @@
     </div>
 </div>
 
-{% elif not forloop.counter0|divisibleby:2 %}
+{% else %}
 <div class="row">
     <div class="">
         <div class="col-md-4">
              {% if post.img %}
-            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
+            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="School Image">
             {% endif %}
         </div>
         <div class="col-md-8">
