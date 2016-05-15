@@ -40,7 +40,6 @@ body {
   text-decoration: underline;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
-  background-image: none;
   background-color: #fff;
   color: #000;
 }
@@ -51,7 +50,7 @@ body {
   background-color: #7a25ae;
   color: #fff;
 }
-.navbar .navbar-nav li a:focus,.navbar .navbar-nav > li > a:hover {
+.navbar .navbar-nav li a:focus, .navbar .navbar-nav > li > a:hover {
   color: #fff;
   background-color: transparent;
   text-decoration: underline;
@@ -73,8 +72,6 @@ body {
 /*general*/
 .blue-background {
   background: rgba(116, 72, 236, 0.67);
-  /*padding-right:20px;
-  padding-left:20px;*/
   margin:auto;
 }
 .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
@@ -82,9 +79,7 @@ body {
   color:  #181616;
 }
 
-.navbar .navbar-nav li a:focus {
-  color: #000;
-}
+
 
 .white-text {
   color: #fff;
