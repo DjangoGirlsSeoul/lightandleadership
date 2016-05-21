@@ -5,8 +5,8 @@
 {% if forloop.counter0|divisibleby:2 %}
 {% if forloop.first%}
 <div class="row">
-  <div class="ourcontentpost" >
-    <div class="col-md-12" style="height:500px; background:url({{content.img.url}});" >
+  <div class="main-header ourcontentpost" >
+    <div class="col-md-12 " style="background:url({{content.img.url}}); background-repeat: no-repeat; background-size: 100%;" >
       <h2>
         <span>EDUCATE </span> </br>
         <span>EMPOWER</span> </br>
@@ -16,45 +16,47 @@
   </div>
 </div>
 {% else %}
-<div class="row" style="height: 400px">
-  <div class="ourcontentpost" style="background-color:{{content.color}}">
-    <div class="col-md-8" style="background-color:{{content.color}}; height: 300px; text-align: center; color: white; display: table;">
+<div class="row">
+  <div class="odd ourcontentpost">
+    <div class="plaindiv col-sm-12 col-md-8" style="background-color:{{content.color}};text-align: center;">
       <div class="contents">
       {% if content.title %}
-      <h1>{{ content.title }}</h1>
+      <h1 class="white-text">{{ content.title }}</h1>
       {% endif %}
-      <h3 class="center-block contenttextright">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
+      <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
       <button class="btn btn-default" type="button">Learn More</button>
       </div>
     </div>
-    <div class="col-md-4" style="background:url({{content.img.url}}); background-repeat: no-repeat; background-size: 100%; height: 300px">
+    <div class="imgdiv col-sm-12 col-md-4" style="height: 100%; padding: 0">
+      <img class="img-responsive" src="{{content.img.url}}"> </img>
     </div>
   </div>
-  <div style="height: 100px; display: table; width: 100%;">
-    <div class="info" style="background-color:#70DBC8"><a class="infoclick"><i class="fa fa-heart" aria-hidden="true"></i> DONATE </a></div>
-    <div class="info" style="background-color:#4584A8"><a class="infoclick"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> HELP NEEDED</a></div>
-    <div class="info" style="background-color:#0D4F75"><a class="infoclick"><i class="fa fa-user" aria-hidden="true"></i> HUAYWASI </a></div>
-    <div class="info" style="background-color:#DFB1AA"><a class="infoclick"><i class="fa fa-rss" aria-hidden="true"></i> OUR BLOG </a></div>
-    <div class="info" style="background-color:#A81117"><a class="infoclick"><i class="fa fa-phone" aria-hidden="true"></i> CONTAT US</a></div>
+  <div style="height: 200px; display: table; width: 100%;">
+    <div class="info" style="background-color:#70DBC8"><a class="infoclick"><i class="fa fa-5x fa-heart" aria-hidden="true"></i><p> DONATE </p> </a></div>
+    <div class="info" style="background-color:#4584A8"><a class="infoclick"><i class="fa fa-5x fa-hand-paper-o" aria-hidden="true"></i> <p>HELP NEEDED </p></a></div>
+    <div class="info" style="background-color:#0D4F75"><a class="infoclick"><i class="fa fa-5x fa-user" aria-hidden="true"></i><p> HUAYWASI </p></a></div>
+    <div class="info" style="background-color:#DFB1AA"><a class="infoclick"><i class="fa fa-5x fa-rss" aria-hidden="true"></i> <p>OUR BLOG </p></a></div>
+    <div class="info" style="background-color:#A81117"><a class="infoclick"><i class="fa fa-5x fa-phone" aria-hidden="true"></i> <p> CONTAT US </p></a></div>
   </div>
 </div>
 {% endif %}
 {% else %}
-<div class="row" style="height: 300px">
-  <div class="ourcontentpost" style="background-color:{{content.color}}">
-    <div class="col-md-4" style="background:url({{content.img.url}}); background-repeat: no-repeat; background-size: 100%; height: 300px">
+<div class="row">
+  <div class="twice ourcontentpost">
+    <div class="imgdiv col-sm-12 col-md-4" style="height: 100%; padding: 0">
+      <img class="img-responsive" src="{{content.img.url}}"> </img>
     </div>
-    <div class="col-md-8" style="background-color:{{content.color}}; height: 300px; text-align: center; color: white; display: table;">
+    <div class="plaindiv col-sm-12 col-md-8" style="background-color:{{content.color}}; height: 100%; text-align: center; color: white;">
       <div class="contents">
       {% if forloop.counter == 4 %}
       {% if content.title %}
-      <h1 style="color: #4584A8">{{ content.title }}</h1>
+      <h1 class="white-text">{{ content.title }}</h1>
       {% endif %}
-      <h3 class="center-block contenttextright" style="color : gray">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
+      <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
       <button class="btn btn-default" type="button">Learn More</button>
       {% else %}
-      <h1 >{{ content.title }}</h1>
-      <h3 class="center-block contenttextright">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
+      <h1 class="white-text">{{ content.title }}</h1>
+      <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
       <button class="btn btn-default" type="button">Learn More</button>
       {% endif %}
       </div>

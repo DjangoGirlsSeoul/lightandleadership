@@ -277,7 +277,7 @@ body {
   width: 90%;
 }
 .main h2 span {
-  color : #545454;
+  color : #fff;
   letter-spacing: -1px;
   padding: 10px;
 }
@@ -383,4 +383,31 @@ body {
   .ethics-image {
     height: 450px;
   }
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 20px;
+  }
+ .main-header div {
+   height : 235px;
+ }
+ .twice {
+   height: 300px;
+ }
+  .odd {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+ .main-header div {
+   min-height : 500px;
+ }
+ .twice {
+   height: 300px;
+ }
+ .odd {
+   height: 300px;
+ }
 }

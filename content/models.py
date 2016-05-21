@@ -19,6 +19,9 @@ class Home(models.Model):
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
 	text = tinymce_models.HTMLField(default="")
 
+	def __str__(self):
+		return self.title
+
 class OurTeam(models.Model):
 	title = models.CharField(default="Our Team", max_length=200)
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True, help_text="This will be the page title image.")
