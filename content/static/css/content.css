@@ -385,22 +385,31 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 15px;
+  }
   h2 {
     font-size: 20px;
   }
  .main-header div {
-   height : 235px;
+   min-height : 235px;
  }
  .twice {
-   height: 300px;
+   min-height: 200px;
  }
   .odd {
-    height: 300px;
+    min-height: 200px;
+  }
+  .liinfo{
+    display:none;
   }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 701px) {
  .main-header div {
    min-height : 500px;
  }
