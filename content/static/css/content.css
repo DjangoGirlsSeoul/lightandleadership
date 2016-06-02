@@ -301,6 +301,10 @@ body {
   color: white;
   padding-top: 40px;
 }
+
+.more-btn {
+  margin-bottom: 10px;
+}
 @media(max-width: 640px) {
   .title-super {
     font-size: 1.5em;
