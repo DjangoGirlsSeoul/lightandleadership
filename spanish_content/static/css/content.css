@@ -1,0 +1,426 @@
+body {
+  font-family: 'Lato',sans-serif;
+  color: #747784;
+  font-weight: 300;
+}
+.thin {
+  font-weight: 300;
+}
+/*override bootstrap navbar settings*/
+
+
+.navbar {
+  margin: 0;
+  border-radius: 0;
+  background: rgba(0,0,0,0.5);
+  border-color: transparent;
+  color: #fff;
+}
+
+.navbar ul {
+  font-size: 20px;
+/*padding-top: 15px;*/
+  color: #fff;
+  font-family: 'Lato',sans-serif;
+  font-weight: 400;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #fff;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+  color: #000;
+}
+
+.navbar-default .navbar-nav > li > a,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand {
+  color: #fff;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/*donate button override bootstrap*/
+.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .active > a:hover {
+  background-image: none;
+  background-color: #7a25ae;
+  color: #fff;
+}
+.navbar .navbar-nav li a:focus, .navbar .navbar-nav > li > a:hover {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  background: rgba(0,0,0,0.5);
+  border-radius: 5px;
+}
+
+.dropdown-menu > li > a {
+  color: #fff;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #fff;
+}
+
+/*general*/
+.blue-background {
+  background: rgba(116, 72, 236, 0.67);
+  margin:auto;
+}
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+  background-color: #181616;
+  color:  #181616;
+}
+
+
+
+.white-text {
+  color: #fff;
+}
+
+/*ourstory page css*/
+.our-story-title {
+  padding-top: 2em;
+  padding-bottom: 1em;
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+.our-story-post {
+  min-height: 500px;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  padding-left: 3em;
+  padding-right: 2em;
+  color: #fff;
+}
+
+.our-story-img {
+  max-height: 250px;
+  max-width: 250px;
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+}
+.story-text {
+  margin-top: 2em;
+  padding-top: 3em;
+  margin:auto;
+}
+/*ourteam page*/
+.team-posts {
+  display:block;
+  margin:auto;
+  max-width: 60%;
+}
+.team-list {
+  max-width: 30%;
+  display:block;
+  margin:auto;
+}
+
+.our-team-text {
+  padding: 30px;
+}
+/*childrens program page css*/
+.program-post {
+  min-height: 350px;
+}
+
+.childrens-class {
+  min-height: 350px;
+}
+
+.row {
+  overflow: hidden;
+}
+
+.ccright {
+  float: right;
+}
+
+.program-text-right {
+  padding: 2em;
+}
+
+.program-subtitle {
+  padding-top: 10%;
+  color: #fff;
+}
+
+.main {
+  padding-top: 20px;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+}
+/*ethics page css*/
+.ethics-image {
+  width: 100%;
+}
+
+.ethics-title {
+  /*padding: 1em;*/
+  /*padding-top: 4em;*/
+  padding-bottom:0;
+  color: blue;
+  font-weight: bold;
+}
+/*volunteer pages*/
+.positions {
+  background-color: #8b008b;
+  padding:20px;
+}
+.apply {
+  padding: 14px;
+  background-color: white;
+  border-radius: 5px;
+
+}
+.apply a{
+  color: #8b008b;
+}
+.volunteer-text {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  padding:15px;
+}
+
+/*flatpages main content*/
+.main-content {
+  margin-top: 10px;
+  padding: 50px;
+  min-height: 550px;
+}
+
+.flat-page-text {
+  padding: 50px;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+/* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+.footer ul {
+  list-style-type: none;
+  margin-top: 5px;
+  padding: 0;
+}
+
+.footer ul li a {
+  display: block;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer li a {
+  padding: 2em;
+}
+
+.footer a:hover {
+  color: #000;
+  font-style: none;
+}
+.footer-img{
+  width: 100%;
+  height: 530px;
+}
+.footer-text {
+  padding-left:40px;
+  padding-right: 40px;
+}
+.icon-background {
+    color: #c0ffc0;
+}
+.blue {
+  color: #3b5998;
+}
+.gray-shadow {
+  text-shadow: 15px 10px 6px rgba(0,0,0,0.5);
+}
+.twitter-blue{
+  color: #55acee;
+}
+.instagram-brown {
+  color: #9b6954;
+}
+.big-footer {
+  display:none;
+}
+.learnmore {
+  padding:30px;
+}
+
+.mainimg  {
+  position: relative;
+  width : 100%;
+}
+.main h2 {
+  position: absolute;
+  top : 100px;
+  text-align: right;
+  width: 90%;
+}
+.main h2 span {
+  color : #fff;
+  letter-spacing: -1px;
+  padding: 10px;
+}
+.our-content-post .contents {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+.info {
+  width: 20%;
+  display: table-cell;
+  color: white;
+}
+.infoclick {
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  padding-top: 40px;
+}
+
+.more-btn {
+  margin-bottom: 10px;
+}
+@media(max-width: 640px) {
+  .title-super {
+    font-size: 1.5em;
+    padding-bottom: .5em;
+  }
+
+  .childrens-class {
+    min-height: 100px;
+    padding-bottom: 1em;
+  }
+
+  .program-subtitle {
+    padding-top: 1em;
+  }
+  .big-footer{
+    display:none;
+  }
+  .small-footer{
+    display:block;
+  }
+  .footer li a {
+    padding:0;
+  }
+  .footer-text {
+    padding: 10px;
+  }
+  .ethics-image {
+    height: 400px;
+  }
+}
+
+@media(max-width: 786px) {
+  .childrens-class {
+    min-height: 100px;
+    padding-bottom: 2em;
+  }
+
+  .program-subtitle {
+    padding-top: 1em;
+  }
+
+  .small-footer{
+    display:block;
+  }
+  .ethics-image {
+    height: 450px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Navbar positioning*/
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .ethics-image {
+    height: 450px;
+  }
+}
+
+@media (min-width: 992px) {
+  .big-footer  {
+    display: block;
+  }
+  .small-footer {
+    display: none;
+  }
+  .ethics-title {
+    padding-top: 4em;
+  }
+  .ethics-image {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+ .main-header div {
+   min-height : 235px;
+ }
+ .twice {
+   min-height: 200px;
+ }
+  .odd {
+    min-height: 200px;
+  }
+  .liinfo{
+    display:none;
+  }
+}
+
+@media screen and (min-width: 701px) {
+ .main-header div {
+   min-height : 500px;
+ }
+ .twice {
+   height: 300px;
+ }
+ .odd {
+   height: 300px;
+ }
+}
