@@ -277,7 +277,7 @@ body {
   width: 90%;
 }
 .main h2 span {
-  color : #545454;
+  color : #fff;
   letter-spacing: -1px;
   padding: 10px;
 }
@@ -300,6 +300,10 @@ body {
   text-decoration: none;
   color: white;
   padding-top: 40px;
+}
+
+.more-btn {
+  margin-bottom: 10px;
 }
 @media(max-width: 640px) {
   .title-super {
@@ -383,4 +387,40 @@ body {
   .ethics-image {
     height: 450px;
   }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+ .main-header div {
+   min-height : 235px;
+ }
+ .twice {
+   min-height: 200px;
+ }
+  .odd {
+    min-height: 200px;
+  }
+  .liinfo{
+    display:none;
+  }
+}
+
+@media screen and (min-width: 701px) {
+ .main-header div {
+   min-height : 500px;
+ }
+ .twice {
+   height: 300px;
+ }
+ .odd {
+   height: 300px;
+ }
 }

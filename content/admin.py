@@ -11,6 +11,8 @@ class OurStoryAdmin(admin.ModelAdmin):
     fields = ['order', 'img', 'text']
     list_display=('order','img','text')
 
+class HomeAdmin(admin.ModelAdmin):
+    list_display = ('title','color','order','img','text')
 
 class OurTeamAdmin(admin.ModelAdmin):
     form = OurTeamForm
@@ -68,7 +70,7 @@ admin.site.register(VolunteerAbout, VolunteerAboutAdmin)
 admin.site.register(VolunteerPeru, VolunteerPeruAdmin)
 admin.site.register(VolunteerOpenPosition, VolunteerOpenPositionAdmin)
 admin.site.register(CustomPage, CustomPageAdmin)
-admin.site.register(Home)
+admin.site.register(Home, HomeAdmin)
 admin.site.register(FooterInfo)
 admin.site.register(DonateSection, DonateSectionAdmin)
 
