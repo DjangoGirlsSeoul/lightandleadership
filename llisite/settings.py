@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.flatpages',
     'content',
+    'spanish_content',
     'tinymce',
 )
 SITE_ID = 1

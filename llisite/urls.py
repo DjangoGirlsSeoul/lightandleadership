@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'', include('content.urls',namespace='content')),
+    url(r'es',include('spanish_content.urls',namespace='spanish_content')),
     url(r'^(?P<url>.*/)$', views.flatpage),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()

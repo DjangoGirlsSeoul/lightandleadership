@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+{% for program in artisanprograms %}
+{% if forloop.counter0|divisibleby:2 %}
+{% if forloop.first %}
+<div class="row">
+    {% if program.img %} <!--  if image 4, 8 col -->
+    <div class="col-md-7 col-md-push-5">
+        <img class="center-block img-responsive ethics-image" src="{{ program.img.url }}">
+    </div>
+    <div class="col-md-5 col-md-pull-7">
+        <h1 class="ethics-title text-center text-uppercase">{{ program.title }}</h1>
+        {% if program.text %}
+        <div class="center-block program-text-right">{{ program.text | safe }}</div>
+        {% endif %}
+    </div>
+    {% else %}<!-- if no img center the title in the first row -->
+    <div class="col-md-12">
+        <h1 class="ethics-title text-center text-uppercase">{{ program.title }}</h1>
+    </div>
+    {% endif %}
+</div>
+<!--  end row 1 -->
+
+{% else %}
+<div class="row">
+    <div class="program-post">
+        <div class="col-md-4 childrens-class" style="background-color:{{ program.color }}">
+            <h1 class="program-subtitle text-center">{{ program.title }}</h1>
+        </div>
+        <div class="col-md-8">
+            <div class="center-block program-text-right">{{ program.text | safe }}</div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% else %}
+<div class="row">
+    <div class="program-post">
+        <div class="col-md-4 col-md-push-8 childrens-class" style="background-color:{{ program.color }}">
+            <h1 class="program-subtitle text-center">{{ program.title }}</h1>
+        </div>
+        <div class="col-md-8 col-md-pull-4 ">
+            <div class="center-block program-text-right">{{ program.text | safe }}</div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
+
