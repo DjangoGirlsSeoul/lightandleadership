@@ -39,7 +39,7 @@
                             <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="{{ category.link }}"> {{ category.title }}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 {% for sub_category in category.submenu_set.all %}
-                                    <li><a href="{{ sub_category.link }}">{{ sub_category.title }}</a></li>
+                                <li><a href="{{ sub_category.link }}">{{ sub_category.title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
