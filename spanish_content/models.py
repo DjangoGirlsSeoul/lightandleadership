@@ -161,7 +161,7 @@ class DonateSection(models.Model):
 		return self.title
 
 class Menu(models.Model):
-	order = models.PositiveIntegerField(help_text="Enter a number 1 will be on the left")
+	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be on the left.")
 	title = models.CharField(null=True, max_length=100)
 	link = models.CharField(blank=True, null=True, max_length=100)
 
@@ -169,7 +169,7 @@ class Menu(models.Model):
 		return self.title
 
 class SubMenu(models.Model):
-	order = models.PositiveIntegerField(help_text="Enter a number 1 will be on the top of a dropdown")
+	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be on the top of a dropdown.")
 	title = models.CharField(null=True, max_length=100)
 	link = models.CharField(blank=True, null=True, max_length=100)
 	menu = models.ForeignKey(
