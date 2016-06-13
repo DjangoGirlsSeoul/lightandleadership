@@ -34,14 +34,18 @@
                  <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                     {% for category in categories %}
+                        {% if category %}
                         <li class="dropdown">
                             <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="{{ category.link }}"> {{ category.title }}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                {% for sub_category in category.child.all %}
+                                {% for sub_category in category.submenu_set.all %}
+                                    {% if sub_category %}
                                 <li><a href="{{ sub_category.link }}">{{ sub_category.title }}</a></li>
+                                    {% endif %}
                                 {% endfor %}
                             </ul>
                         </li>
+                        {% endif %}
                         {% endfor %}
                     </ul>
                 </div>

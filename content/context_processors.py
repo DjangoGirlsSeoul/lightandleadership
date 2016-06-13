@@ -1,9 +1,9 @@
-from .models import FooterInfo, MenuNavbar
+from .models import FooterInfo, Menu
 
 def footer(request):
 	footer = FooterInfo.objects.all()
 	return {'footer': footer}
 
 def navbar(request):
-	categories = MenuNavbar.objects.filter(parent__isnull=True)
+	categories = Menu.objects.all().order_by('order')
 	return {'categories': categories}
