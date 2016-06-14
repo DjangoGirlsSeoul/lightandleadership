@@ -68,8 +68,9 @@ class SubMenuInline(admin.TabularInline):
 
 class MenuAdmin(admin.ModelAdmin):
     list_display = ('title', 'order')
-    fieldsets = [(None, {'fields': ['title']}), ]
+    fieldsets = [(None, {'fields': ['title', 'order']}), ]
     inlines = [SubMenuInline]
+
 
 admin.site.register(OurStory, OurStoryAdmin)
 admin.site.register(OurTeam, OurTeamAdmin)
