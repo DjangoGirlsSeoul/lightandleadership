@@ -33,37 +33,18 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
+                    {% for category in categories %}
+                        {% if category %}
                         <li class="dropdown">
-                            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#">About Us<span class="caret"></span></a>
+                            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="{{ category.link }}"> {{ category.title }}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/ourstory">Our Story</a></li>
-                                <li><a href="/peru">Why Peru</a></li>
-                                <li><a href="/ethics">Ethical And Responsible Volunteering</a></li>
-                                <li><a href="/financials">Financials</a></li>
-                                <li><a href="/ourteam">Board Members, Staff and Volunteers</a></li>
+                                {% for sub_category in category.submenu_set.all %}
+                                <li><a href="{{ sub_category.link }}">{{ sub_category.title }}</a></li>
+                                {% endfor %}
                             </ul>
                         </li>
-                        <li>
-                            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#">What we do<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/childrensprogram">Children(7-12)</a></li>
-                                <li><a href="/teensprogram">Teens (13-17)</a></li>
-                                <li><a href="/womensprogram">Women (18+)</a></li>
-                                <li><a href="/artisanprogram">H Artisan Products</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#">Take Action<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/donate">Donate</a></li>
-                                <li><a href="/volunteerperu">Volunteer Peru</a></li>
-                                <li><a href="/chicago">Volunteer Chicago</a></li>
-                                <li><a href="/donations">In Kind Donations</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                        <a href="/donate" class="text-uppercase blue-background">Donate</a>
-                        </li>
+                        {% endif %}
+                    {% endfor %}
                     </ul>
                 </div>
             </div>

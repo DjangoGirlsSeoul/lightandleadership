@@ -159,3 +159,23 @@ class DonateSection(models.Model):
 
 	def __str__(self):
 		return self.title
+
+class Menu(models.Model):
+	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be on the left.")
+	title = models.CharField(null=True, max_length=100)
+	link = models.CharField(blank=True, null=True, max_length=100)
+
+	def __str__(self):
+		return self.title
+
+class SubMenu(models.Model):
+	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be on the top of a dropdown.")
+	title = models.CharField(null=True, max_length=100)
+	link = models.CharField(blank=True, null=True, max_length=100)
+	menu = models.ForeignKey(
+        'Menu',
+        on_delete=models.CASCADE,
+    )
+
+	def __str__(self):
+		return self.title
