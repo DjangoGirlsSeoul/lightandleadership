@@ -79,7 +79,9 @@ body {
   color:  #181616;
 }
 
-
+.titlebackground {
+  min-height: 400px;
+}
 
 .white-text {
   color: #fff;
@@ -169,12 +171,23 @@ body {
 }
 
 .ethics-title {
-  /*padding: 1em;*/
-  /*padding-top: 4em;*/
   padding-bottom:0;
-  color: blue;
+  color: #fff;
   font-weight: bold;
+  padding-top: 4em;
 }
+
+.no-img-title {
+  padding-bottom:0;
+  padding-top: 4em;
+}
+
+.page-sub-title {
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-bottom: 5em;
+}
+
 /*volunteer pages*/
 .positions {
   background-color: #8b008b;
@@ -380,9 +393,6 @@ body {
   }
   .small-footer {
     display: none;
-  }
-  .ethics-title {
-    padding-top: 4em;
   }
   .ethics-image {
     height: 450px;

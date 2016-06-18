@@ -4,24 +4,29 @@
 {% for team in ourteams %}
 {% if forloop.first %}
 <div class="row">
-{% if team.img %} <!--  if image 4, 8 col -->
-    <div class="col-md-7 ">
-        <img class="center-block img-responsive ethics-image" src="{{ team.img.url }}">
+    {% if team.img %} <!--  if image 4, 8 col -->
+   <div class="text-center titlebackground" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ team.img.url }})
+    center 30% no-repeat;">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="ethics-title text-center text-uppercase">{{ team.title }}</h1>
+            {% if team.text %}
+            <h4 class="white-text page-sub-title">{{ team.text | safe }}</h4>
+            {% endif %}
+        </div>
     </div>
-    <div class="col-md-5">
-    {% if team.title %}
-        <h1 class="ethics-title center-block text-center">{{ team.title | safe }}</h1>
-    {% endif %}
-    {% if team.text %}
-        <p class="center-block text-center">{{ team.text | safe }}</p>
-    {% endif %}
-    </div>
-    {% else %} <!-- if no img center the title in the first row -->
-    <div class="col-md-12">
-        <h1 class="ethics-title text-center text-uppercase">{{ team.text | safe }}</h1>
-    </div>
-    {% endif %}
 </div>
+  {% else %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1 class="text-center no-img-title text-uppercase">{{ team.title }}</h1>
+        {% if team.text %}
+        <h4 class="page-sub-title">{{ team.text | safe }}</h4>
+        {% endif %}
+    </div>
+</div>
+    {% endif %}
+    <!-- end row one -->
 {% endif %}
 <div class="row">
     <div class="col-md-12">
