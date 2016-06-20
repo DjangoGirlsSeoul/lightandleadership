@@ -1,46 +1,24 @@
 
 {% extends "base.html" %}
 {% block content %}
-{% for team in ourteams %}
-{% if forloop.first %}
-<div class="row">
-    {% if team.img %} <!--  if image 4, 8 col -->
-   <div class="text-center titlebackground" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ team.img.url }})
-    center 30% no-repeat;">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="ethics-title text-center text-uppercase">{{ team.title }}</h1>
-            {% if team.text %}
-            <h4 class="white-text page-sub-title">{{ team.text | safe }}</h4>
-            {% endif %}
-        </div>
-    </div>
-</div>
-  {% else %}
-<div class="row">
-    <div class="col-md-12 text-center">
-        <h1 class="text-center no-img-title text-uppercase">{{ team.title }}</h1>
-        {% if team.text %}
-        <h4 class="page-sub-title">{{ team.text | safe }}</h4>
-        {% endif %}
-    </div>
-</div>
-    {% endif %}
+{% for post in ourteams %}
+
+{% include "post_base.html" %}
     <!-- end row one -->
-{% endif %}
+
 <div class="row">
     <div class="col-md-12">
         <h1 class="text-uppercase text-center">Our Peru Team Members:</h1>
         <div class="team-list">
-            <h4>{{ team.us_team | linebreaks }}</h4>
+            <h4>{{ post.us_team | linebreaks }}</h4>
         </div>
         <h1 class="text-uppercase text-center">Our US Team Members:</h1>
         <div class="team-list">
-            <h4>{{ team.peru_team | linebreaks }}</h4>
+            <h4>{{ post.peru_team | linebreaks }}</h4>
         </div>
         <h1 class="text-uppercase text-center">Our Board Team Members:</h1>
         <div class="team-list">
-            <h4>{{ team.board_team | linebreaks }}</h4>
+            <h4>{{ post.board_team | linebreaks }}</h4>
         </div>
     </div>
 </div>
