@@ -2,70 +2,10 @@
 {% block content %}
 {% for post in donateabout %}
 
-{% if forloop.first %}
-<div class="row">
-    {% if post.img %} <!--  if image 4, 8 col -->
-   <div class="text-center titlebackground" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ post.img.url }})
-    center 30% no-repeat;">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
-            {% if post.text %}
-            <h4 class="white-text page-sub-title">{{ post.text | safe }}</h4>
-            {% endif %}
-        </div>
-    </div>
-</div>
-  {% else %}
-<div class="row">
-    <div class="col-md-12 text-center">
-        <h1 class="text-center no-img-title text-uppercase">{{ post.title }}</h1>
-        {% if post.text %}
-        <h4 class="page-sub-title">{{ post.text | safe }}</h4>
-        {% endif %}
-    </div>
-</div>
-    {% endif %}
-    <!-- end row one -->
-
+{% include "post_base.html" %}
 
 <!--  end row 1 -->
 
-{% elif forloop.counter0|divisibleby:2 %}
-<div class="row">
-    <div class="">
-        <div class="col-md-4 col-md-push-8 ">
-             {%if post.img %}
-            <img class="center-block img-responsive" src="{{ post.img.url }}">
-            {% endif %}
-        </div>
-        <div class="col-md-8 col-md-pull-4 ">
-            <div class="volunteer-text">
-                <p><strong> {{ post.title }}</strong></p>
-                <div class="center-block">{{ post.text | safe }}</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-{% else %}
-<div class="row">
-    <div class="">
-        <div class="col-md-4">
-             {% if post.img %}
-            <img class="center-block img-responsive" src="{{ post.img.url }}">
-            {% endif %}
-        </div>
-        <div class="col-md-8">
-            <div class="volunteer-text">
-                <p><strong> {{ post.title }}</strong></p>
-                <div class="center-block">{{ post.text | safe }}</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-{% endif %}
 {% endfor %}
 
 {% for post in donate %}
