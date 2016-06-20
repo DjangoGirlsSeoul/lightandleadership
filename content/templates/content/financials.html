@@ -1,53 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 {% for post in financials %}
-{% if forloop.counter0|divisibleby:2 %}
-{% if forloop.first %}
-<div class="row">
-    {% if post.img %} <!--  if image 4, 8 col -->
-    <div class="col-md-7 col-md-push-5">
-        <img class="center-block img-responsive ethics-image" src="{{ post.img.url }}">
-    </div>
-    <div class="col-md-5 col-md-pull-7">
-        <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
-        {% if post.text %}
-        <div class="center-block program-text-right">{{ post.text | safe }}</div>
-        {% endif %}
-    </div>
-    {% else %}<!-- if no img center the title in the first row -->
-    <div class="col-md-12">
-        <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
-    </div>
-    {% endif %}
-</div>
-<!--  end row 1 -->
-{% else %}
-<div class="row">
-    <div class="program-post">
-        <div class="col-md-4 col-md-push-8 childrens-class">
-             {%if post.img %}
-            <img class="center-block img-responsive ethics-image" src="{{ post.img.url }}" alt="Generic placeholder image">
-            {% endif %}
-        </div>
-        <div class="col-md-8 col-md-pull-4">
-            <div class="center-block program-text-right">{{ post.text | safe }}</div>
-        </div>
-    </div>
-</div>
-{% endif %}
-{% else %}
-<div class="row">
-    <div class="program-post">
-        <div class="col-md-4">
-             {%if post.img %}
-            <img class="center-block img-responsive ethics-image" src="{{ post.img.url }}" alt="Generic placeholder image">
-            {% endif %}
-        </div>
-        <div class="col-md-8">
-            <div class="center-block program-text-right">{{ post.text | safe }}</div>
-        </div>
-    </div>
-</div>
-{% endif %}
+
+{% include "post_base.html" %}
+
 {% endfor %}
 {% endblock %}
