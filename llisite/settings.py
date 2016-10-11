@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'content.context_processors.footer',
                 'content.context_processors.navbar',
+                'spanish_content.context_processors.spanish_navbar',
             ],
         },
     },
