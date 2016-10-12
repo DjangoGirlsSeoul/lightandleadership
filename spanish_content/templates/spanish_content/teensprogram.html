@@ -1,6 +1,6 @@
-{% extends "base.html" %}
+{% extends "spanish_base.html" %}
 {% block content %}
-{% for program in artisanprograms %}
+{% for program in teensprograms %}
 {% if forloop.counter0|divisibleby:2 %}
 {% if forloop.first %}
 <div class="row">
@@ -21,7 +21,6 @@
     {% endif %}
 </div>
 <!--  end row 1 -->
-
 {% else %}
 <div class="row">
     <div class="program-post">
@@ -48,4 +47,3 @@
 {% endif %}
 {% endfor %}
 {% endblock %}
-

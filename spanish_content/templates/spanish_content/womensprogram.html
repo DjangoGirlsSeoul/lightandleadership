@@ -1,9 +1,8 @@
-{% extends "base.html" %}
+{% extends "spanish_base.html" %}
 {% block content %}
-{% for program in childrensprograms %}
+{% for program in womensprograms %}
 {% if forloop.counter0|divisibleby:2 %}
 {% if forloop.first %}
-
 <div class="row">
     {% if program.img %} <!--  if image 4, 8 col -->
     <div class="col-md-7 col-md-push-5">
@@ -22,7 +21,6 @@
     {% endif %}
 </div>
 <!--  end row 1 -->
-
 {% else %}
 <div class="row">
     <div class="program-post">
@@ -49,4 +47,3 @@
 {% endif %}
 {% endfor %}
 {% endblock %}
-
