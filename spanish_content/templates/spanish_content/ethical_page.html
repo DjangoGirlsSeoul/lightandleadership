@@ -1,6 +1,6 @@
-{% extends "base.html" %}
+{% extends "spanish_base.html" %}
 {% block content %}
-{% for post in reasons %}
+{% for post in ethicalpost %}
 {% if forloop.counter0|divisibleby:2 %}
 {% if forloop.first %}
 <div class="row">
@@ -29,7 +29,7 @@
             <img class="center-block img-responsive ethics-image" src="{{ post.img.url }}" alt="Generic placeholder image">
             {% endif %}
         </div>
-        <div class="col-md-8 col-md-pull-4 ">
+        <div class="col-md-8 col-md-pull-4">
             <div class="center-block program-text-right">{{ post.text | safe }}</div>
         </div>
     </div>
@@ -51,4 +51,5 @@
 {% endif %}
 {% endfor %}
 {% endblock %}
+
 

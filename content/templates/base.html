@@ -19,6 +19,7 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}">
     </head>
     <body>
+        {% block navbar %}       
         <nav class="navbar  navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header text-uppercase">
@@ -52,6 +53,7 @@
                 </div>
             </div>
         </nav>
+        {% endblock navbar %}
         <div class="container main">
             {% block content %}
             {% endblock %}
