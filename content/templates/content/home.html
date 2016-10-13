@@ -27,7 +27,7 @@
       <h1 class="white-text">{{ content.title }}</h1>
       {% endif %}
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <button class="btn btn-default more-btn" type="button">Learn More</button>
+      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">Learn More</a>
       </div>
     </div>
   </div>
@@ -35,11 +35,9 @@
 {% if forloop.counter == 3 %}
 <div class="row liinfo">
   <div style="height: 200px; display: table; width: 100%;">
-    <div class="info" style="background-color:#70DBC8"><a class="infoclick"><i class="fa fa-5x fa-heart" aria-hidden="true"></i><p> DONATE </p> </a></div>
-    <div class="info" style="background-color:#4584A8"><a class="infoclick"><i class="fa fa-5x fa-hand-paper-o" aria-hidden="true"></i> <p>HELP NEEDED </p></a></div>
-    <div class="info" style="background-color:#0D4F75"><a class="infoclick"><i class="fa fa-5x fa-user" aria-hidden="true"></i><p> HUAYWASI </p></a></div>
-    <div class="info" style="background-color:#DFB1AA"><a class="infoclick"><i class="fa fa-5x fa-rss" aria-hidden="true"></i> <p>OUR BLOG </p></a></div>
-    <div class="info" style="background-color:#A81117"><a class="infoclick"><i class="fa fa-5x fa-phone" aria-hidden="true"></i> <p> CONTACT US </p></a></div>
+    {% for link in homelink %}
+    <div class="info" style="background-color:{{ link.color }}"><a class="infoclick"><i class="fa fa-5x {{ link.icon }}" aria-hidden="true"></i> <p> {{ link.title }} </p></a></div>
+    {% endfor %}
   </div>
 </div>
 {% endif %}
@@ -58,11 +56,11 @@
       <h1 class="white-text">{{ content.title }}</h1>
       {% endif %}
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <button class="btn btn-default more-btn" type="button">Learn More</button>
+      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">Learn More</a>
       {% else %}
       <h1 class="white-text">{{ content.title }}</h1>
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <button class="btn btn-default more-btn" type="button">Learn More</button>
+      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">Learn More</a>
       {% endif %}
       </div>
     </div>
