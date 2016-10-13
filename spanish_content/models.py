@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from tinymce import models as tinymce_models
+from django.utils.safestring import mark_safe
 
 
 class OurStory(models.Model):
@@ -18,6 +19,7 @@ class Home(models.Model):
 	order = models.PositiveIntegerField()
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
 	text = tinymce_models.HTMLField(default="")
+	link = models.URLField(max_length=200, help_text="Please enter a link for learn more button", default="#")
 
 	def __str__(self):
 		return self.title
@@ -179,3 +181,14 @@ class SubMenu(models.Model):
 
 	def __str__(self):
 		return self.title
+
+class HomeLink(models.Model):
+	link = models.URLField(max_length=200, help_text="Please enter a link")
+	title = models.CharField(blank=True, null=True, max_length=100)
+	color = models.CharField(max_length=20, blank=True, help_text="Only enter a color if the order >= 2. Both 'red' and '#FF0000' are accceptable")
+	order = models.PositiveIntegerField(default=1)
+	icon = models.CharField(blank=True, null=True, max_length=100, default="fa-heart", help_text=mark_safe("Please write in which icon you'd like, ie fa-phone. Check <a href='http://fontawesome.io/icons/'>here</a> for icons."))
+
+	def __str__(self):
+		return self.title
+
