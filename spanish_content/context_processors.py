@@ -1,4 +1,4 @@
-from .models import FooterInfo, Menu, SubMenu
+from .models import FooterInfo, Menu
 
 def footer(request):
     footer = FooterInfo.objects.all()
