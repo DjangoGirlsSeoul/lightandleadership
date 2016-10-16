@@ -80,7 +80,7 @@ body {
 }
 
 .titlebackground {
-  min-height: 400px;
+ min-height: 400px;
 }
 
 .white-text {
@@ -278,7 +278,10 @@ body {
 .learnmore {
   padding:30px;
 }
-
+.home-img{
+  width:100%;
+  height:100%;
+}
 .mainimg  {
   position: relative;
   width : 100%;
@@ -427,6 +430,7 @@ body {
  .main-header div {
    min-height : 500px;
  }
+
  .twice {
    height: 300px;
  }
