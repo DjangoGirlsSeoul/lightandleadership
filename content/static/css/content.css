@@ -326,7 +326,8 @@ body {
 
   .childrens-class {
     min-height: 100px;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
+    padding-top: 2em;
   }
 
   .program-subtitle {
@@ -353,6 +354,7 @@ body {
   .childrens-class {
     min-height: 100px;
     padding-bottom: 2em;
+    padding-top: 2em;
   }
 
   .program-subtitle {
@@ -385,6 +387,11 @@ body {
   .ethics-image {
     height: 450px;
   }
+  .childrens-class {
+    min-height: 200px;
+    padding-bottom: 2em;
+    padding-top: 2em;
+  }
 }
 
 @media (min-width: 992px) {
@@ -396,6 +403,9 @@ body {
   }
   .ethics-image {
     height: 450px;
+  }
+  .childrens-class {
+    min-height: 350px;
   }
 }
 

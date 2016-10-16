@@ -1,15 +1,16 @@
 {% if forloop.counter0|divisibleby:2 %}
 {% if forloop.first %}
-
+<div class="row">
     {% if program.img %}
-<div class="text-center titlebackground" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ program.img.url }})
-    center 30% no-repeat; ">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="ethics-title text-center text-uppercase">{{ program.title }}</h1>
-            {% if program.text %}
-            <h4 class="white-text page-sub-title">{{ program.text | safe }}</h4>
-            {% endif %}
+    <div class="text-center titlebackground" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ program.img.url }})
+        center 30% no-repeat; ">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="ethics-title text-center text-uppercase">{{ program.title }}</h1>
+                {% if program.text %}
+                <h4 class="white-text page-sub-title">{{ program.text | safe }}</h4>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
