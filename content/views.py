@@ -61,7 +61,7 @@ def volunteer_chicago(request):
 def home(request):
     home = Home.objects.all().order_by('order')
     homelink = HomeLink.objects.all().order_by('order')
-    return render(request, 'spanish_content/home.html', {'home': home, 'homelink': homelink})
+    return render(request, 'content/home.html', {'home': home, 'homelink': homelink})
 
 def donate(request):
 	donateabout = DonateSection.objects.filter(category='AboutUs').order_by('order')
