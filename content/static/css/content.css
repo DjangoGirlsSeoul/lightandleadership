@@ -72,7 +72,8 @@ body {
 /*general*/
 .blue-background {
   background: rgba(116, 72, 236, 0.67);
-  margin:auto;
+  margin:0;
+  padding:0;
 }
 .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
   background-color: #181616;
