@@ -4,7 +4,9 @@ from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, V
 from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
-from content.forms import OurTeamForm
+from django.contrib.sites.models import Site
+
+
 
 
 class OurStoryAdmin(admin.ModelAdmin):
@@ -15,7 +17,6 @@ class HomeAdmin(admin.ModelAdmin):
     list_display = ('title','color','order','img','text')
 
 class OurTeamAdmin(admin.ModelAdmin):
-    form = OurTeamForm
     list_display = ('title','us_team', 'peru_team', 'board_team')
 
 class EduProgramAdmin(admin.ModelAdmin):
@@ -38,9 +39,6 @@ class MCEFlatPageForm(FlatpageForm):
 
 
 class MCEFlatPageAdmin(FlatPageAdmin):
-    """
-    Page Admin
-    """
     form = MCEFlatPageForm
 
 
@@ -90,3 +88,4 @@ admin.site.register(Menu, MenuAdmin)
 admin.site.register(HomeLink, HomeLinkAdmin)
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, MCEFlatPageAdmin)
+admin.site.unregister(Site)

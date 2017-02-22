@@ -10,15 +10,15 @@
     <div class="col-md-12">
         <h1 class="text-uppercase text-center">Our Peru Team Members:</h1>
         <div class="team-list">
-            <h4>{{ post.us_team | linebreaks }}</h4>
+            <h4>{{ post.us_team | safe }}</h4>
         </div>
         <h1 class="text-uppercase text-center">Our US Team Members:</h1>
         <div class="team-list">
-            <h4>{{ post.peru_team | linebreaks }}</h4>
+            <h4>{{ post.peru_team | safe }}</h4>
         </div>
         <h1 class="text-uppercase text-center">Our Board Team Members:</h1>
         <div class="team-list">
-            <h4>{{ post.board_team | linebreaks }}</h4>
+            <h4>{{ post.board_team | safe }}</h4>
         </div>
     </div>
 </div>

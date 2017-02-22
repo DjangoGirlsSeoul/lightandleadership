@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'spanish_content',
     'tinymce',
 )
-SITE_ID = 1
+SITE_ID = 3
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -106,7 +106,7 @@ USE_TZ = True
 
 # TINYMCE_JS_URL = 'http://debug.example.org/tiny_mce/tiny_mce_src.js'
 TINYMCE_DEFAULT_CONFIG = {
-    'plugins': "table,xhtmlxtras,spellchecker,paste,searchreplace, save, advhr, advimage, advlink, emotions, iespell, insertdatetime, preview",
+    'plugins': "table,xhtmlxtras,spellchecker,paste,searchreplace, save, advhr, advimage, advlink, emotions, iespell, insertdatetime, preview, media",
     'theme_advanced_buttons1': "bold,italic,underline,strikethrough,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,formatselect,fontselect,fontsizeselect",
     'theme_advanced_buttons2': "bullist,numlist,outdent,indent,ltr,rtl,separator,link,unlink,anchor,image,separator,table,insertdate,inserttime,advhr,emotions,media,charmap,separator,undo,redo",
     'theme': 'advanced',
@@ -116,6 +116,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'height': 300,
     'width': 1000,
     'resize': 'both',
+    "extended_valid_elements" : "iframe[src|frameborder|style|scrolling|class|width|height|name|align]",
 
 }
 TINYMCE_SPELLCHECKER = True

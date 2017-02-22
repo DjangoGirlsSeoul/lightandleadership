@@ -7,10 +7,8 @@
 <div class="row">
   <div class="main-header ourcontentpost" >
     <div class="col-xs-12 col-sm-12 col-md-12" style="background:url({{content.img.url}}); background-repeat: no-repeat; background-size: 100%;" >
-      <h2>
-        <span>EDUCATE </span> </br>
-        <span>EMPOWER</span> </br>
-        <span>BRING CHANGE TO HUAYCAN</span>
+      <h2 class="white-text">
+       {{ content.title }}
       </h2>
     </div>
   </div>
@@ -27,7 +25,7 @@
       <h1 class="white-text">{{ content.title }}</h1>
       {% endif %}
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">Learn More</a>
+      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>
       </div>
     </div>
   </div>
@@ -56,11 +54,11 @@
       <h1 class="white-text">{{ content.title }}</h1>
       {% endif %}
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">Learn More</a>
+      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>
       {% else %}
       <h1 class="white-text">{{ content.title }}</h1>
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">Learn More</a>
+      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>
       {% endif %}
       </div>
     </div>

@@ -20,6 +20,7 @@ class Home(models.Model):
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
 	text = tinymce_models.HTMLField(default="")
 	link = models.URLField(max_length=200, help_text="Please enter a link for learn more button", default="#")
+	button_text = models.CharField(blank=True, null=True, max_length=100, default="Learn More")
 
 	def __str__(self):
 		return self.title
@@ -28,9 +29,9 @@ class OurTeam(models.Model):
 	title = models.CharField(default="Our Team", max_length=200)
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True, help_text="This will be the page title image.")
 	text = tinymce_models.HTMLField()
-	us_team = models.CharField(max_length=300)
-	peru_team = models.CharField(max_length=300)
-	board_team = models.CharField(max_length=300)
+	us_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
+	peru_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
+	board_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
 
 
 
@@ -139,7 +140,7 @@ class FooterInfo(models.Model):
 	instagramlink = models.URLField(default="#")
 
 	def __str__(self):
-		return self.title
+		return self.text
 
 class DonateSection(models.Model):
 	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top")
