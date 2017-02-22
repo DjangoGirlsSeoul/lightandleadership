@@ -4,7 +4,6 @@ from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, V
 from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
-from content.forms import OurTeamForm
 
 
 class OurStoryAdmin(admin.ModelAdmin):
@@ -15,7 +14,6 @@ class HomeAdmin(admin.ModelAdmin):
     list_display = ('title','color','order','img','text')
 
 class OurTeamAdmin(admin.ModelAdmin):
-    form = OurTeamForm
     list_display = ('title','us_team', 'peru_team', 'board_team')
 
 class EduProgramAdmin(admin.ModelAdmin):
