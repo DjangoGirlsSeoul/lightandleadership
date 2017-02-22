@@ -10,7 +10,7 @@
         <!--fonts and icons-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <!--to get lato font-->
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,200,100' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=LibelSuit:400,300,200,100' rel='stylesheet' type='text/css'>
         <!--bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Optional theme -->
@@ -21,9 +21,9 @@
     <body>
         {% block navbar %}
         <nav class="navbar  navbar-default navbar-fixed-top">
-            <div class="container-fluid">
+
                 <div class="navbar-header text-uppercase">
-                    <a class=" " href="#"><img style="height:70px; margin:0;padding:0" src="../static/images/LLI_Logo.png" alt="light leadership logo"></a>
+                    <a class=" " href="#"><img style="height:70px; margin:0;padding:0; float:left;" src="../static/images/LLI_Logo.png" alt="light leadership logo"></a>
 
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
@@ -32,6 +32,7 @@
                     <span class="icon-bar"></span>
                     </button>
                 </div>
+                <div class="container-fluid">
                  <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                     {% for category in categories %}
@@ -51,7 +52,8 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+                </div>
+          <!--   </div> -->
         </nav>
         {% endblock navbar %}
         <div class="container main">
@@ -95,6 +97,7 @@
                                    <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
                                 </span>
                             </ul>
+                            {% if item.copyright %}<p class="text-center"> {{ item.copyright }}</p>{% endif %}
                         </div>
                     </div>
 
@@ -129,7 +132,9 @@
                                    <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
                                 </span>
                             </ul>
+                            {% if item.copyright %}<p class="text-center"> {{ item.copyright }}</p>{% endif %}
                         </div>
+
                     </div>
                     {% endif %}
                     {% endfor %}
@@ -167,9 +172,12 @@
                                        <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
                                     </span>
                                 </ul>
+                                {% if item.copyright %}<p class="text-center"> {{ item.copyright }}</p>{% endif %}
                             </div>
                         </div>
+
                         {% endfor %}
+
                 </div>
             </div>
         </footer>
