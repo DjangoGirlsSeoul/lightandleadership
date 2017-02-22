@@ -138,6 +138,7 @@ class FooterInfo(models.Model):
 	facebooklink =  models.URLField(default="#")
 	twitterlink = models.URLField(default="#")
 	instagramlink = models.URLField(default="#")
+	copyright = models.CharField(default=" ", max_length=300)
 
 	def __str__(self):
 		return self.text
