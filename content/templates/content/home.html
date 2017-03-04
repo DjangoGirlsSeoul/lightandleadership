@@ -26,6 +26,7 @@
       {% endif %}
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
       <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>
+      {% if content.link2 %}<a href="{{ content.link2 }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text2 }}</a>{% endif %}
       </div>
     </div>
   </div>
@@ -54,11 +55,13 @@
       <h1 class="white-text">{{ content.title }}</h1>
       {% endif %}
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>
+      {% if content.link %}<a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>{% endif %}
+      {% if content.link2 %}<a href="{{ content.link2 }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text2 }}</a>{% endif %}
       {% else %}
       <h1 class="white-text">{{ content.title }}</h1>
       <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>
+      {% if content.link %}<a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>{% endif %}
+       {% if content.link2 %}<a href="{{ content.link2 }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text2 }}</a>{% endif %}
       {% endif %}
       </div>
     </div>

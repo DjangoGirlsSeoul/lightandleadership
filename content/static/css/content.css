@@ -1,7 +1,7 @@
 body {
-  font-family: 'Libel Suit',sans-serif;
+  font-family: 'Dosis',sans-serif;
   color: #747784;
-  font-weight: 300;
+  font-weight: 400;
 }
 .thin {
   font-weight: 300;
@@ -21,7 +21,7 @@ body {
   font-size: 20px;
 /*padding-top: 15px;*/
   color: #fff;
-  font-family: 'Libel Suit',sans-serif;
+  font-family: 'Dosis',sans-serif;
   font-weight: 400;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {

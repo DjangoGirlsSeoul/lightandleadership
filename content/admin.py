@@ -14,7 +14,7 @@ class OurStoryAdmin(admin.ModelAdmin):
     list_display=('order','img','text')
 
 class HomeAdmin(admin.ModelAdmin):
-    list_display = ('title','color','order','img','text')
+    list_display = ('order','title','color','img','text')
 
 class OurTeamAdmin(admin.ModelAdmin):
     list_display = ('title','us_team', 'peru_team', 'board_team')

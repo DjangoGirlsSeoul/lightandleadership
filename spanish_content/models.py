@@ -19,8 +19,10 @@ class Home(models.Model):
 	order = models.PositiveIntegerField()
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
 	text = tinymce_models.HTMLField(default="")
-	link = models.URLField(max_length=200, help_text="Please enter a link for learn more button", default="#")
+	link = models.URLField(max_length=200, help_text="Please enter a link for learn more button", blank=True, null=True)
 	button_text = models.CharField(blank=True, null=True, max_length=100, default="Learn More")
+	link2 = models.URLField(max_length=200, blank=True, null=True, help_text="Please enter a link for learn more button")
+	button_text2 = models.CharField(blank=True, null=True, max_length=100, default="Learn More")
 
 
 	def __str__(self):
