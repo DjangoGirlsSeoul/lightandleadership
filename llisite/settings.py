@@ -25,7 +25,7 @@ SECRET_KEY = 't$z*-(o-c3%x+o%*z)duu9%0_^sr_w$$lfa%(^iipb5!wp!ftc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lightandleadership.pythonanywhere.com', 'lightandleadership.com', '127.0.0.1']
 
 
 # Application definition
