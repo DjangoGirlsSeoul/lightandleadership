@@ -35,7 +35,7 @@
 <div class="row liinfo">
   <div style="height: 200px; display: table; width: 100%;">
     {% for link in homelink %}
-    <div class="info" style="background-color:{{ link.color }}"><a class="infoclick"><i class="fa fa-5x {{ link.icon }}" aria-hidden="true"></i> <p> {{ link.title }} </p></a></div>
+    <div class="info" style="background-color:{{ link.color }}"><a class="infoclick" href="{{ link.link }}"><i class="fa fa-5x {{ link.icon }}" aria-hidden="true"></i> <p> {{ link.title }} </p></a></div>
     {% endfor %}
   </div>
 </div>
