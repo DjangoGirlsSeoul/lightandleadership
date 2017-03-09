@@ -9,6 +9,9 @@ def our_story(request):
     ourstory = OurStory.objects.all().order_by('order')
     return render(request, 'content/our_story.html', {'ourstory': ourstory})
 
+def apply(request):
+
+    return render(request, 'content/apply.html')
 
 def our_team(request):
 	ourteams = OurTeam.objects.all()
