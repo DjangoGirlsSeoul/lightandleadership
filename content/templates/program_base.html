@@ -28,11 +28,13 @@
 {% else %}
 <div class="row">
     <div class="program-post">
+    {% if program.video == False %}
         <div class="col-md-4 childrens-class" style="background-color:{{ program.color }}">
             <h1 class="program-subtitle text-center">{{ program.title }}</h1>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8"> {% else %} <div class="col-md-12" style="background-color: {{ program.color }};"> {% endif %}
             <div class="center-block program-text-right">{{ program.text | safe }}</div>
+        }
         </div>
     </div>
 </div>
@@ -40,10 +42,11 @@
 {% else %}
 <div class="row">
     <div class="program-post">
+        {% if program.video == False %}
         <div class="col-md-4 col-md-push-8 childrens-class" style="background-color:{{ program.color }}">
             <h1 class="program-subtitle text-center">{{ program.title }}</h1>
         </div>
-        <div class="col-md-8 col-md-pull-4 ">
+        <div class="col-md-8 col-md-pull-4 ">{% else %} <div class="col-md-12" style="background-color: {{ program.color }};"> {% endif %}
             <div class="center-block program-text-right">{{ program.text | safe }}</div>
         </div>
     </div>

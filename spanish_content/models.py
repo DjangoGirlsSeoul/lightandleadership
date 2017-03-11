@@ -50,6 +50,7 @@ class EduProgram(models.Model):
 	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description of program.")
 	color = models.CharField(max_length=20, blank=True, help_text="Only enter a color if the order >= 2. Both 'red' and '#FF0000' are accceptable")
 	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top of the page")
+	video = models.BooleanField(default=False)
 	CHILDREN = "Children"
 	TEENS = "Teens"
 	WOMEN = "Women"
