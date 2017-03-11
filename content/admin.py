@@ -20,8 +20,8 @@ class OurTeamAdmin(admin.ModelAdmin):
     list_display = ('title','us_team', 'peru_team', 'board_team')
 
 class EduProgramAdmin(admin.ModelAdmin):
-    fields = ['category', 'order', 'title', 'img', 'color', 'text']
-    list_display = ('category', 'order','title')
+    fields = ['category', 'order', 'title', 'img', 'color', 'text', 'video']
+    list_display = ('category', 'order','title', 'video')
 
 
 class EthicalPostAdmin(admin.ModelAdmin):

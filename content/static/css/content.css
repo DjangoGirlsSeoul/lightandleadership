@@ -160,11 +160,11 @@ body {
 }
 
 .main {
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   width: 100%;
   margin-right: 0;
   margin-left: 0;
-  padding: 0;
+  /*padding: 0;*/
 }
 /*ethics page css*/
 .ethics-image {
@@ -298,16 +298,19 @@ body {
   letter-spacing: -1px;
   padding: 10px;
 }
-.our-content-post .contents {
+.our-content-post, .contents {
   text-align: center;
-  vertical-align: middle;
-  display: table-cell;
+  padding: 20px;
+
 }
-.info {
+/*.info {
   width: 20%;
   display: table-cell;
   color: white;
-}
+}*/
+/*.plaindiv {
+  padding:200px;
+}*/
 .infoclick {
   text-align: center;
   vertical-align: middle;
@@ -316,7 +319,8 @@ body {
   width: 100%;
   text-decoration: none;
   color: white;
-  padding-top: 40px;
+  padding-top:15%;
+  padding-bottom:15%;
 }
 
 .more-btn {
@@ -432,9 +436,9 @@ body {
   .odd {
     min-height: 200px;
   }
-  .liinfo{
+  /*.liinfo{
     display:none;
-  }
+  }*/
 }
 
 @media screen and (min-width: 701px) {
