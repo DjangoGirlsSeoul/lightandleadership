@@ -193,6 +193,7 @@ body {
 .positions {
   background-color: #8b008b;
   padding:20px;
+  margin:0;
 }
 .apply {
   padding: 14px;

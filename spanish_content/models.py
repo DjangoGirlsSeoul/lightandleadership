@@ -17,7 +17,7 @@ class Home(models.Model):
 	title = models.CharField(blank=True, null=True, max_length=100)
 	color = models.CharField(max_length=20, blank=True, help_text="Only enter a color if the order >= 2. Both 'red' and '#FF0000' are accceptable")
 	order = models.PositiveIntegerField()
-	img = models.ImageField(upload_to='aboutus', blank=True, null=True)
+	img = models.ImageField(upload_to='aboutus', blank=True, null=True,help_text="Image is optional. If there is no image, this section will be full width")
 	text = tinymce_models.HTMLField(default="")
 	link = models.URLField(max_length=200, help_text="Please enter a link for learn more button", blank=True, null=True)
 	button_text = models.CharField(blank=True, null=True, max_length=100, default="Learn More")
@@ -50,7 +50,7 @@ class EduProgram(models.Model):
 	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description of program.")
 	color = models.CharField(max_length=20, blank=True, help_text="Only enter a color if the order >= 2. Both 'red' and '#FF0000' are accceptable")
 	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top of the page")
-	video = models.BooleanField(default=False)
+	video = models.BooleanField(default=False, help_text="check here if you want this section to be full width")
 	CHILDREN = "Children"
 	TEENS = "Teens"
 	WOMEN = "Women"
@@ -146,11 +146,12 @@ class FooterInfo(models.Model):
 		return self.title
 
 class DonateSection(models.Model):
-	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top")
+	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top of each section(section order: aboutus, donate, club, paypal")
 	color = models.CharField(max_length=20, blank=True, help_text="This is the background color for section titles, Only needed if order = 1.")
 	title = models.CharField(blank=True, null=True, max_length=100, help_text="If the order number is 1, this will be the section title.")
 	img = models.ImageField(upload_to='action',blank=True, null=True, help_text="Upload image corresponding to Text")
 	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
+	paypal_button = models.TextField(blank=True, null=True, help_text="enter the paypal code if you want it in this section.")
 	ABOUTUS = "AboutUs"
 	DONATE = "Donate"
 	CLUB = "Club"
