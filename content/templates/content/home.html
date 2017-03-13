@@ -43,7 +43,7 @@
 <div class="row liinfo">
   <div style="height: 100%; width: 100%;">
     {% for link in homelink %}
-    <div class="col-sm-3 clearfix" style="background-color:{{ link.color }}"><a class="infoclick" href="{{ link.link }}"><i class="fa fa-5x {{ link.icon }}" aria-hidden="true"></i> <p> {{ link.title }} </p></a></div>
+    <div class="{% if home_link_count == 3 %}col-sm-4 {% elif home_link_count == 4 %} col-sm-3 {% endif %}clearfix" style="background-color:{{ link.color }}"><a class="infoclick" href="{{ link.link }}"><i class="fa fa-5x {{ link.icon }}" aria-hidden="true"></i> <p> {{ link.title }} </p></a></div>
     {% endfor %}
   </div>
 </div>

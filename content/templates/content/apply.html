@@ -1,7 +1,12 @@
 
 {% extends "base.html" %}
 {% block content %}
-   <div class="container"><div id="go-overseas-application" style="margin-top:6em;"></div></div>
-<script language="javascript" src="https://www.gooverseas.com/node/26765/prospector/crm_prospector/embeddable.js"></script>
+{% for app in application %}
+{% if app.title %}
+<h1 class="text-center" style="padding-top: 60px;padding-bottom:10px;">{{ app.title }}</h1>{% endif %}
+{{ app.text|safe }}
+{% endfor %}
+
 {% endblock %}
+
 
