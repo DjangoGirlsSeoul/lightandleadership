@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-{% if ourstory %}
+
 {% for story in ourstory %}
 {% if forloop.counter0|divisibleby:2 %}
 <div class="row">
@@ -8,10 +8,11 @@
         {% if forloop.first %}
         <h1 class="our-story-title text-center text-uppercase">Our Story</h1>
         {% endif %}
+        {%if story.img %}
         <div class="col-md-6 col-md-push-6">
-            {%if story.img %}<img class="center-block img-responsive our-story-img"  src="{{ story.img.url }}" alt="Generic placeholder image">{% endif %}
+            <img class="center-block img-responsive our-story-img"  src="{{ story.img.url }}" alt="Our Story Image">
         </div>
-        <div class="col-md-6 col-md-pull-6">
+        <div class="col-md-6 col-md-pull-6">{% else %} <div class="col-md-12"> {% endif %}
             <h3 class="center-block story-text">{{ story.text | safe }}</h3>
         </div>
     </div>
@@ -19,12 +20,11 @@
 {% else %}
 <div class="row">
     <div class="our-story-post" style="background-color:{{ story.color }}">
+        {%if story.img %}
         <div class="col-md-6">
-            {%if story.img %}
-            <img class="center-block img-responsive our-story-img" src="{{ story.img.url }}" alt="Generic placeholder image">
-            {% endif %}
+            <img class="center-block img-responsive our-story-img" src="{{ story.img.url }}" alt="Our Story Image">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6"> {% else %} <div class="col-md-12">  {% endif %}
             {% if story.title %}
             <h1>{{ story.title }}</h1>
             {% endif %}
@@ -33,9 +33,13 @@
     </div>
 </div>
 {% endif %}
+
+{% empty %}
+<div class="row">
+<div class="our-story-post">
+<h2 class="text-center" style="color:black;">Coming soon! </h2>
+</div>
+</div>
 {% endfor %}
-{% else %}
-<h2>No Story available</h2>
-{% endif %}
 {% endblock %}
 

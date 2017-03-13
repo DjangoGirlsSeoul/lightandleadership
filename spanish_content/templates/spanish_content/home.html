@@ -1,68 +1,75 @@
 {% extends "spanish_base.html" %}
 {% block content %}
+
 {% if home %}
 {% for content in home %}
 {% if forloop.counter0|divisibleby:2 %}
 {% if forloop.first%}
 <div class="row">
-  <div class="main-header ourcontentpost" >
-    <div class="col-xs-12 col-sm-12 col-md-12" style="background:url({{content.img.url}}); background-repeat: no-repeat; background-size: 100%;" >
+  <div class="main-header ourcontentpost clearfix" >
+    <div class="col-xs-12 col-sm-12 col-md-12" style="background:url({{content.img.url}}); background-repeat: no-repeat; background-size: cover;" >
       <h2 class="white-text">
        {{ content.title }}
       </h2>
     </div>
   </div>
 </div>
+<!-- if it's not the first: but still even  -->
 {% else %}
 <div class="row">
   <div class="odd ourcontentpost">
+  <!-- if there's an image: -->
+  {% if content.img %}
     <div class="imgdiv col-xs-12 col-sm-12 col-md-4 col-md-push-8" style="height: 100%; padding: 0;">
       <img class="center-block img-responsive home-img" src="{{content.img.url}}"> </img>
     </div>
     <div class="plaindiv col-xs-12 col-sm-12 col-md-8 col-md-pull-4" style="background-color:{{content.color}};text-align: center; height: 100%;">
+    <!-- if no image:  -->
+    {% else %} <div class="plaindiv col-sm-12" style="background-color: {{ content.color }}; text-align: center;"> {% endif %}
       <div class="contents">
-      {% if content.title %}
-      <h1 class="white-text">{{ content.title }}</h1>
-      {% endif %}
-      <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      <a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>
-      {% if content.link2 %}<a href="{{ content.link2 }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text2 }}</a>{% endif %}
+        {% if content.title %}
+        <h1 class="white-text">{{ content.title }}</h1>
+        {% endif %}
+        <h3 class="center-block contenttextright white-text">{{ content.text|safe }}</h3>
+        {% if content.link %}<a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>{% endif %}
+        {% if content.link2 %}<a href="{{ content.link2 }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text2 }}</a>{% endif %}
       </div>
     </div>
   </div>
 </div>
+{% endif %} <!-- end if first loop section -->
+<!-- homelink section -->
 {% if forloop.counter == 3 %}
 <div class="row liinfo">
-  <div style="height: 200px; display: table; width: 100%;">
+  <div style="height: 100%; width: 100%;">
     {% for link in homelink %}
-    <div class="info" style="background-color:{{ link.color }}"><a class="infoclick"><i class="fa fa-5x {{ link.icon }}" aria-hidden="true"></i> <p> {{ link.title }} </p></a></div>
+    <div class="{% if home_link_count == 3 %}col-sm-4 {% elif home_link_count == 4 %} col-sm-3 {% endif %}clearfix" style="background-color:{{ link.color }}"><a class="infoclick" href="{{ link.link }}"><i class="fa fa-5x {{ link.icon }}" aria-hidden="true"></i> <p> {{ link.title }} </p></a></div>
     {% endfor %}
   </div>
 </div>
+<!-- ending homelinks section -->
 {% endif %}
 
-{% endif %}
+<!-- if not even  -->
 {% else %}
 <div class="row">
   <div class="twice ourcontentpost">
+  <!-- if image: -->
+    {% if content.img %}
     <div class="imgdiv col-xs-12 col-sm-12 col-md-4" style="height: 100%; padding: 0;">
-      <img class="center-block img-responsive home-img" src="{{content.img.url}}"> </img>
+      <img class="center-block img-responsive home-img" src="{{ content.img.url }}"> </img>
     </div>
-    <div class="plaindiv col-xs-12 col-sm-12 col-md-8" style="background-color:{{content.color}}; height: 100%; text-align: center;">
+
+    <div class="plaindiv col-xs-12 col-sm-12 col-md-8" style="background-color:{{ content.color }}; height: 100%; text-align: center;">
+    <!-- if no image: -->
+    {% else %} <div class="plaindiv col-sm-12" style="background-color: {{ content.color }}; display:block; width:100%"> {% endif %}
       <div class="contents">
-      {% if forloop.counter == 4 %}
-      {% if content.title %}
-      <h1 class="white-text">{{ content.title }}</h1>
-      {% endif %}
-      <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      {% if content.link %}<a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>{% endif %}
-      {% if content.link2 %}<a href="{{ content.link2 }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text2 }}</a>{% endif %}
-      {% else %}
-      <h1 class="white-text">{{ content.title }}</h1>
-      <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
-      {% if content.link %}<a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>{% endif %}
-       {% if content.link2 %}<a href="{{ content.link2 }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text2 }}</a>{% endif %}
-      {% endif %}
+        {% if content.title %}
+        <h1 class="white-text">{{ content.title }}</h1>
+        {% endif %}
+        <h3 class="center-block contenttextright white-text">{% autoescape off %}{{ content.text}}{% endautoescape %}</h3>
+        {% if content.link %}<a href="{{ content.link }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text }}</a>{% endif %}
+        {% if content.link2 %}<a href="{{ content.link2 }}" class="btn btn-default btn-lg active" role="button">{{ content.button_text2 }}</a>{% endif %}
       </div>
     </div>
   </div>
@@ -70,4 +77,5 @@
 {% endif %}
 {% endfor %}
 {% endif %}
+
 {% endblock %}

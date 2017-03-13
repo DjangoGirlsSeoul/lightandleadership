@@ -1,49 +1,26 @@
 {% extends "spanish_base.html" %}
 {% block content %}
 {% for post in volunteerabout %}
-{% if forloop.counter0|divisibleby:2 %}
 {% if forloop.first %}
-{% if post.img %}
 <div class="row">
-    <div class="col-md-8 col-md-push-4">
-      <img class="center-block img-responsive" src="{{post.img.url}}">
-    </div>
-
-    <div class="col-md-4 col-md-pull-8">
-        <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
-        {% if post.text %}
-        <div class="center-block volunteer-text">{{ post.text | safe }}</div>
-        {% endif %}
-    </div>
-</div>
-        {% else %}<!-- if no img center the title in the first row -->
-<div class="row">
-    <div class="col-md-12">
-        <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
-    </div>
-</div>
-    {% endif %}
-
-
-<!--  end row 1 -->
-
-{% elif not forloop.counter0|divisibleby:2 %}
-<div class="row">
-    <div class="">
-        <div class="col-md-4 col-md-push-8 ">
-             {%if post.img %}
-            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
-            {% endif %}
-        </div>
-        <div class="col-md-8 col-md-pull-4 ">
-            <div class="volunteer-text">
-                <p><strong> {{ post.title }}</strong></p>
-                <div class="center-block">{{ post.text | safe }}</div>
+   <div class="text-center titlebackground" {% if post.img %} style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ post.img.url }})
+    center 30% no-repeat;">  {% else %}>  {% endif %}
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
+                {% if post.text %}
+                <h4 class="white-text page-sub-title">{{ post.text | safe }}</h4>
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
-{% elif forloop.last %}
+
+<!-- if not first loop -->
+{% elif forloop.counter0|divisibleby:2 %}
+{% if forloop.last %}
+{% if positions.count > 0 %}
+<div class="row">
 <div class="positions">
     <div class="row">
     <!-- these should truncate at 4 positions, arrow on right to scroll to more or link to more.  -->
@@ -54,39 +31,25 @@
     <div class="row">
     {% for position in positions %}
         <div class="col-md-3">
-        <h3 class="white-text">{{ position.title }}</h3>
-        <p class="white-text">{{ position.date|date:"D d M Y" }}</p>
-        <h3 class="apply text-uppercase text-center"><a href="{{ position.link }}">Apply Here</a></h3>
+            <h3 class="white-text text-center">{{ position.title }}</h3>
+            <p class="white-text text-center">{{ position.date|date:"D d M Y" }}</p>
+            <h3 class="apply text-uppercase text-center"><a href="{{ position.link }}">Apply Here</a></h3>
         </div>
         {% endfor %}
     </div>
 </div>
-
-<div class="row">
-    <div class="">
-        <div class="col-md-4 col-md-push-8 ">
-             {%if post.img %}
-            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
-            {% endif %}
-        </div>
-        <div class="col-md-8 col-md-pull-4 ">
-            <div class="volunteer-text">
-                <p><strong> {{ post.title }}</strong></p>
-                <div class="center-block">{{ post.text | safe }}</div>
-            </div>
-        </div>
-    </div>
 </div>
 {% endif %}
-{% else %}
+<!-- end if last for loop -->
+{% endif %}
 <div class="row">
-    <div class="">
+    <div class=""> {% if post.img %}
         <div class="col-md-4">
-             {% if post.img %}
+
             <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
-            {% endif %}
+
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8">{% else %} <div class="col-md-12"> {% endif %}
             <div class="volunteer-text">
                 <p><strong> {{ post.title }}</strong></p>
                 <div class="center-block">{{ post.text | safe }}</div>
@@ -94,93 +57,129 @@
         </div>
     </div>
 </div>
+{% else %}
+{% if forloop.last %}
+{% if positions.count > 0 %}
+<div class="row">
+<div class="positions">
+    <div class="row">
+    <!-- these should truncate at 4 positions, arrow on right to scroll to more or link to more.  -->
+        <div class="col-md-12">
+            <h1 class="white-text"> These are the positions we need you for</h1>
+        </div>
+    </div>
+    <div class="row">
+    {% for position in positions %}
+        <div class="col-md-3">
+            <h3 class="white-text">{{ position.title }}</h3>
+            <p class="white-text">{{ position.date|date:"D d M Y" }}</p>
+            <h3 class="apply text-uppercase text-center"><a href="{{ position.link }}">Apply Here</a></h3>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endif %}
+<!-- end if last for loop -->
+{% endif %}
+<div class="row">
+    {%if post.img %}
+        <div class="col-md-4 col-md-push-8 ">
+
+            <img class="center-block img-responsive" src="{{ post.img.url }}" alt="Generic placeholder image">
+
+        </div>
+        <div class="col-md-8 col-md-pull-4 ">{% else %} <div class="col-md-12"> {% endif %}
+            <div class="volunteer-text">
+                <p><strong> {{ post.title }}</strong></p>
+                <div class="center-block">{{ post.text | safe }}</div>
+            </div>
+        </div>
+</div>
+
+<!--  end even odd rows-->
 {% endif %}
 {% endfor %}
 
 {% for post in volunteers %}
     {% if forloop.first %}
-    <div class="section-title" style="background-color:{{ post.color }}">
-        <div class="row">
+    <div class="row" style="background-color:{{ post.color }}">
+         {% if post.img %}
             <div class="col-md-4">
                <img class="center-block img-responsive" src="{{ post.img.url }}">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8"> {% else %} <div class="col-md-12"> {% endif %}
                 <div class="volunteer-text">
                     <h1 class="white-text">{{ post.title }}</h1>
                     <div class="white-text"> {{ post.text | safe }}</div>
                 </div>
             </div>
         </div>
-    </div>
-
+{% else %}
     <div class="row">
         <div class="col-md-12">
         <div class="volunteer-text">
-            {% else %}
                 <p><strong>{{ post.title }}</strong></p>
                 <p>{{  post.text | safe }}</p>
-            {% endif %}
-    {% endfor %}
+
             </div>
         </div>
     </div>
+{% endif %}
+{% endfor %}
+
 {% for post in internships %}
     {% if forloop.first %}
-     <div class="section-title" style="background-color:{{ post.color }}">
-    <div class="row">
+     <div class="row" style="background-color:{{ post.color }}">
+     {% if post.img %}
             <div class="col-md-4">
                <img class="center-block img-responsive" src="{{ post.img.url }}">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8"> {% else %} <div class="col-md-12"> {% endif %}
                <div class="volunteer-text">
                     <h1 class="white-text">{{ post.title }}</h1>
                     <div class="white-text"> {{ post.text | safe }}</div>
                 </div>
             </div>
-        </div>
     </div>
-
+{% else %}
     <div class="row">
         <div class="col-md-12">
             <div class="volunteer-text">
-            {% else %}
-
                 <p><strong>{{ post.title }}</strong></p>
                 <p>{{  post.text | safe }}</p>
-            {% endif %}
-{% endfor %}
             </div>
         </div>
     </div>
+{% endif %}
+{% endfor %}
 {% for post in fees %}
     {% if forloop.first %}
-     <div class="section-title" style="background-color:{{ post.color }}">
-    <div class="row">
+     <div class="row" style="background-color:{{ post.color }}">
+     {% if post.img %}
             <div class="col-md-4">
                <img class="center-block img-responsive" src="{{ post.img.url }}">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8"> {% else %} <div class="col-md-12"> {% endif %}
                <div class="volunteer-text">
                     <h1 class="white-text">{{ post.title }}</h1>
                     <div class="white-text"> {{ post.text | safe }}</div>
                 </div>
             </div>
-        </div>
     </div>
-
+{% else %}
     <div class="row">
         <div class="col-md-12">
         <div class="volunteer-text">
-            {% else %}
                 <p><strong>{{ post.title }}</strong></p>
                 <p>{{  post.text | safe }}</p>
-            {% endif %}
-    {% endfor %}
             </div>
-            <div class="text-center">
-             <button type="button" class="btn-lg btn-primary" href="#">Apply Now!</button>
-             </div>
         </div>
     </div>
+{% endif %}
+{% endfor %}
+        <div class="text-center">
+            <a href="/apply""> <button type="button" class="btn-lg btn-primary" >Apply Now!</button></a>
+        </div>
 {% endblock %}
 
