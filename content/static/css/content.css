@@ -98,9 +98,9 @@ body {
 }
 
 .our-story-post {
-  min-height: 500px;
+  min-height: 450px;
   padding-top: 4em;
-  padding-bottom: 3em;
+  padding-bottom: 1em;
   padding-left: 3em;
   padding-right: 2em;
   color: #fff;

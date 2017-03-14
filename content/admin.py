@@ -10,8 +10,8 @@ from django.contrib.sites.models import Site
 
 
 class OurStoryAdmin(admin.ModelAdmin):
-    fields = ['order', 'img', 'text']
-    list_display=('order','img','text')
+    fields = ['order', 'img', 'text', 'color']
+    list_display=('order','img','text', 'color')
 
 class HomeAdmin(admin.ModelAdmin):
     list_display = ('order','title','color','img','text')
