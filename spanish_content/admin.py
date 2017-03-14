@@ -1,14 +1,14 @@
 from django.contrib import admin
 
-from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage, Home, FooterInfo, DonateSection, Menu, SubMenu, HomeLink
+from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage, Home, FooterInfo, DonateSection, Menu, SubMenu, HomeLink, Apply
 from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
 
 
 class OurStoryAdmin(admin.ModelAdmin):
-    fields = ['order', 'img', 'text']
-    list_display=('order','img','text')
+    fields = ['order', 'img', 'text', 'color']
+    list_display=('order','img','text', 'color')
 
 class HomeAdmin(admin.ModelAdmin):
     list_display = ('order','title','color','img','text')
@@ -72,6 +72,10 @@ class MenuAdmin(admin.ModelAdmin):
 class HomeLinkAdmin(admin.ModelAdmin):
     list_display = ('order','title', 'color')
 
+class ApplyAdmin(admin.ModelAdmin):
+    list_display = ('title', 'text')
+
+admin.site.register(Apply, ApplyAdmin)
 admin.site.register(OurStory, OurStoryAdmin)
 admin.site.register(OurTeam, OurTeamAdmin)
 admin.site.register(EduProgram, EduProgramAdmin)

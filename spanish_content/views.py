@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage, Home, DonateSection, HomeLink
+from .models import OurStory, OurTeam, EduProgram, EthicalPost, VolunteerPeru, VolunteerOpenPosition, VolunteerAbout, CustomPage, Home, DonateSection, HomeLink, Apply
 from django.utils import timezone
 
 
@@ -61,7 +61,8 @@ def volunteer_chicago(request):
 def home(request):
     home = Home.objects.all().order_by('order')
     homelink = HomeLink.objects.all().order_by('order')
-    return render(request, 'spanish_content/home.html', {'home': home, 'homelink': homelink})
+    home_link_count = HomeLink.objects.count()
+    return render(request, 'spanish_content/home.html', {'home': home, 'homelink': homelink, 'home_link_count': home_link_count })
 
 def donate(request):
 	donateabout = DonateSection.objects.filter(category='AboutUs').order_by('order')
@@ -69,3 +70,8 @@ def donate(request):
 	club = DonateSection.objects.filter(category='Club').order_by('order')
 	paypal = DonateSection.objects.filter(category='Paypal').order_by('order')
 	return render(request, 'spanish_content/donate.html', {'donateabout': donateabout, 'donate': donate, 'club': club, 'paypal': paypal})
+
+
+def apply(request):
+    application = Apply.objects.all()
+    return render(request, 'spanish_content/apply.html', {'application': application})

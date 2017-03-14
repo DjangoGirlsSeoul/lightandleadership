@@ -74,7 +74,6 @@ class EthicalPost(models.Model):
 	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top of the page")
 
 
-
 	def __str__(self):
 		return self.title
 

@@ -1,0 +1,12 @@
+
+{% extends "spanish_base.html" %}
+{% block content %}
+{% for app in application %}
+{% if app.title %}
+<h1 class="text-center" style="padding-top: 60px;padding-bottom:10px;">{{ app.title }}</h1>{% endif %}
+{{ app.text|safe }}
+{% endfor %}
+
+{% endblock %}
+
+

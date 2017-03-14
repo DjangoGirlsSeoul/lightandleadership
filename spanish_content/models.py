@@ -21,12 +21,12 @@ class Home(models.Model):
 	text = tinymce_models.HTMLField(default="")
 	link = models.URLField(max_length=200, help_text="Please enter a link for learn more button", blank=True, null=True)
 	button_text = models.CharField(blank=True, null=True, max_length=100, default="Learn More")
-	link2 = models.URLField(max_length=200, blank=True, null=True, help_text="Please enter a link for learn more button")
+	link2 = models.URLField(max_length=200, blank=True, null=True, help_text="Please enter a link for learn more button", )
 	button_text2 = models.CharField(blank=True, null=True, max_length=100, default="Learn More")
-
 
 	def __str__(self):
 		return self.title
+
 
 class OurTeam(models.Model):
 	title = models.CharField(default="Our Team", max_length=200)
@@ -35,6 +35,7 @@ class OurTeam(models.Model):
 	us_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
 	peru_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
 	board_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
+
 
 
 class OurStoryTitle(models.Model):
@@ -71,8 +72,6 @@ class EthicalPost(models.Model):
 	img = models.ImageField(upload_to='aboutus',blank=True, null=True, help_text="Upload image corresponding to Text")
 	text = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description.")
 	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top of the page")
-
-
 
 	def __str__(self):
 		return self.title
@@ -141,9 +140,10 @@ class FooterInfo(models.Model):
 	facebooklink =  models.URLField(default="#")
 	twitterlink = models.URLField(default="#")
 	instagramlink = models.URLField(default="#")
+	copyright = models.CharField(default=" ", max_length=300)
 
 	def __str__(self):
-		return self.title
+		return self.text
 
 class DonateSection(models.Model):
 	order = models.PositiveIntegerField(help_text="Enter a number. 1 will be at the top of each section(section order: aboutus, donate, club, paypal")
@@ -197,3 +197,9 @@ class HomeLink(models.Model):
 	def __str__(self):
 		return self.title
 
+class Apply(models.Model):
+	title = models.CharField(max_length=100, help_text="not required but helpful", blank=True, null=True)
+	text = models.TextField(help_text="please enter the code for the embedded application here")
+
+	def __str__(self):
+		return self.text
