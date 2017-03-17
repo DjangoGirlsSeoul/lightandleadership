@@ -1,8 +1,63 @@
-{% extends "spanish_base.html" %}
+{% extends "base.html" %}
 {% block content %}
 {% for post in donateabout %}
+{% if forloop.counter0|divisibleby:2 %}
+{% if forloop.first %}
+<div class="row">
+    {% if post.img %} <!--  if image 4, 8 col -->
+   <div class="text-center titlebackground" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ post.img.url }})
+    center 30% no-repeat;">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="ethics-title text-center text-uppercase">{{ post.title }}</h1>
+            {% if post.text %}
+            <h4 class="white-text page-sub-title">{{ post.text | safe }}</h4>
+            {% endif %}
+        </div>
+    </div>
+</div>
+  {% else %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1 class="text-center no-img-title text-uppercase">{{ post.title }}</h1>
+        {% if post.text %}
+        <h4 class="page-sub-title">{{ post.text | safe }}</h4>
+        {% endif %}
+    </div>
+</div>
+    {% endif %}
+    <!-- end row one -->
+<!-- if it's not row one and divisible by 2 -->
+{% else %}
+<div class="row">
+    <div class="program-post">
+        {%if post.img %}
+        <div class="col-md-4 col-md-push-8 childrens-class">
+            <img class="center-block img-responsive ethics-image" src="{{ post.img.url }}" alt="Generic placeholder image">
 
-{% include "post_base.html" %}
+        </div>
+        <div class="col-md-8 col-md-pull-4 ">{% else %} <div class="col-md-12"> {% endif %}
+            <div class="center-block program-text-right">{{ post.text | safe }}</div>
+            {% if post.paypal_button %} {{ post.paypal_button|safe }} {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% else %}
+<div class="row">
+    <div class="program-post">
+        {%if post.img %}
+        <div class="col-md-4">
+            <img class="center-block img-responsive ethics-image" src="{{ post.img.url }}" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-8">{% else %} <div class="col-md-12"> {% endif %}
+            <div class="center-block program-text-right">{{ post.text | safe }}</div>
+            {% if post.paypal_button %} {{ post.paypal_button|safe }} {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
 
 <!--  end row 1 -->
 
@@ -20,7 +75,7 @@
                 <div class="volunteer-text">
                     <h1 class="white-text">{{ post.title }}</h1>
                     <div class="white-text"> {{ post.text | safe }}</div>
-                    {% if post.paypal_button %} {{ post.paypal }} {% endif %}
+                   {% if post.paypal_button %} {{ post.paypal_button|safe }} {% endif %}
                 </div>
             </div>
         </div>
