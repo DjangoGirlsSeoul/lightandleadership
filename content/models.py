@@ -142,6 +142,7 @@ class FooterInfo(models.Model):
 	twitterlink = models.URLField(default="#")
 	instagramlink = models.URLField(default="#")
 	copyright = models.CharField(default=" ", max_length=300)
+	email_signup = models.TextField(blank=True, null=True, help_text="you can enter code here for an email signup")
 
 	def __str__(self):
 		return self.text

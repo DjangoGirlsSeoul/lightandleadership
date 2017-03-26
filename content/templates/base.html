@@ -62,9 +62,9 @@
         </div>
         <footer class="footer">
             <div class="container main big-footer">
-                <div class="row">
                 {% for item in footer %}
                 {% if item.img %}
+                <div class="row">
                     <div class="col-md-4">
                          <img class="img-responsive footer-img" src="{{ item.img.url }}">
                     </div>
@@ -97,49 +97,61 @@
                                    <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
                                 </span>
                             </ul>
-                            {% if item.copyright %}<p class="text-center"> {{ item.copyright }}</p>{% endif %}
+                            <div class="col-md-6">{% if item.email_signup %} {{ item.email_signup|safe }} {% endif %}</div>
+                            <div class="col-md-6">{% if item.copyright %}<p class=> {{ item.copyright }}</p>{% endif %}</div>
                         </div>
                     </div>
 
                     {% else %}
-                    <div class="col-md-12">
-                        <div class="footer-text">
-                            {% if item.title %} <h1 class="blue">{{ item.title }}</h1> {% endif%}
-                            <h3>{{ item.text|safe }}</h3>
-                            <!-- <div class="text-center learnmore">
-                                <a href="{{ item.learnmorelink }}" class="btn btn-primary btn-lg" role="button">Learn More</a>
-                            </div> -->
+                    <!-- if there is no image then uss wide screen -->
+                    <div class="footer-text">
+                        <div class="row ">
+                            <div class="col-md-6">
 
-                            <ul class="text-muted text-center list-inline" style="none">
+                                {% if item.title %} <h1 class="blue">{{ item.title }}</h1> {% endif%}
+                                <h3>{{ item.text|safe }}</h3>
+                                <!-- <div class="text-center learnmore">
+                                    <a href="{{ item.learnmorelink }}" class="btn btn-primary btn-lg" role="button">Learn More</a>
+                                </div> -->
+                                </div>
 
-                                <li><a href="{{ item.facebooklink }}">
-                                <span class="fa-stack fa-4x">
-                                  <i class="fa fa-circle blue fa-stack-2x"></i>
-                                  <span>
-                                  <i class="fa fa-facebook gray-shadow fa-stack-1x" ></i></span>
-                                  </a></li>
-                                </span>
+                            <div class="col-md-6">
+                                <ul class="text-muted text-center list-inline" style="margin-top: 20px;">
 
-                                <li><a href="{{ item.twitterlink }}" class="twitter">
-                                <span class="fa-stack fa-4x">
-                                  <i class="fa fa-circle twitter-blue fa-stack-2x"></i>
-                                  <span><i class="gray-shadow fa-stack-1x fa fa-twitter" alt ="Twitter"></i></span></a></li>
-                                </span>
+                                    <li><a href="{{ item.facebooklink }}">
+                                    <span class="fa-stack fa-4x">
+                                      <i class="fa fa-circle blue fa-stack-2x"></i>
+                                      <span>
+                                      <i class="fa fa-facebook gray-shadow fa-stack-1x" ></i></span>
+                                      </a></li>
+                                    </span>
 
-                                <li><a href="{{ item.instagramlink }}" class="instagram">
-                                <span class="fa-stack fa-4x">
-                                  <i class="fa fa-circle instagram-brown fa-stack-2x"></i>
-                                   <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
-                                </span>
-                            </ul>
-                            {% if item.copyright %}<p class="text-center"> {{ item.copyright }}</p>{% endif %}
+                                    <li><a href="{{ item.twitterlink }}" class="twitter">
+                                    <span class="fa-stack fa-4x">
+                                      <i class="fa fa-circle twitter-blue fa-stack-2x"></i>
+                                      <span><i class="gray-shadow fa-stack-1x fa fa-twitter" alt ="Twitter"></i></span></a></li>
+                                    </span>
+
+                                    <li><a href="{{ item.instagramlink }}" class="instagram">
+                                    <span class="fa-stack fa-4x">
+                                      <i class="fa fa-circle instagram-brown fa-stack-2x"></i>
+                                       <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
+                                    </span>
+                                </ul>
+                            </div>
                         </div>
 
+                        <div class="row" >
+                            <div class="col-md-6"><span class="text-center"> {% if item.email_signup %} {{ item.email_signup|safe }} {% endif %}</span>
+                            </div>
+                            <div class="col-md-6 text-center" > <span class="clear" style="position:absolute; margin-top:50px;">{% if item.copyright %} {{ item.copyright }} {% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                     </div>
                     {% endif %}
-                    {% endfor %}
-                    </div>
-                    </div>
+                        {% endfor %}
                 <div class="container main small-footer">
                     <div class="row">
                         <div class="col-md-12">
@@ -172,12 +184,12 @@
                                        <span><i class=" gray-shadow fa-stack-1x fa fa-instagram" alt ="instagram"></i></span></a></li>
                                     </span>
                                 </ul>
-                                {% if item.copyright %}<p class="text-center"> {{ item.copyright }}</p>{% endif %}
                             </div>
+
+                            <div class="col-md-6">{% if item.email_signup %} {{ item.email_signup|safe }} {% endif %}</div>
+                            <div class="col-md-6">{% if item.copyright %}<p class=> {{ item.copyright }}</p>{% endif %}</div>
                         </div>
-
                         {% endfor %}
-
                 </div>
             </div>
         </footer>

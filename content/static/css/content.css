@@ -8,6 +8,12 @@ body {
 }
 /*override bootstrap navbar settings*/
 
+/*Iframe video 100%*/
+iframe {
+
+    max-width: 100%;
+
+}
 
 .navbar {
   margin: 0;
@@ -332,7 +338,11 @@ body {
     font-size: 1.5em;
     padding-bottom: .5em;
   }
+  iframe {
 
+    max-width: 100%;
+    height:auto;
+}
   .childrens-class {
     min-height: 100px;
     padding-bottom: 2em;
