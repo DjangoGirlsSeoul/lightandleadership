@@ -31,7 +31,7 @@ class Home(models.Model):
 class OurTeam(models.Model):
 	title = models.CharField(default="Our Team", max_length=200)
 	img = models.ImageField(upload_to='aboutus', blank=True, null=True, help_text="This will be the page title image.")
-	text = tinymce_models.HTMLField()
+	text = tinymce_models.HTMLField(blank=True, null=True)
 	us_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
 	peru_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
 	board_team = tinymce_models.HTMLField(blank=True, null=True, help_text="Enter a short description")
