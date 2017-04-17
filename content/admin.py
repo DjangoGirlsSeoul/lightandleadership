@@ -17,6 +17,7 @@ class HomeAdmin(admin.ModelAdmin):
     list_display = ('order','title','color','img','text')
 
 class OurTeamAdmin(admin.ModelAdmin):
+    fields = ['title', 'text', 'peru_team', 'us_team', 'board_team']
     list_display = ('title', 'peru_team', 'us_team', 'board_team')
 
 class EduProgramAdmin(admin.ModelAdmin):
