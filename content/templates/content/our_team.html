@@ -5,22 +5,41 @@
 
 {% include "post_base.html" %}
     <!-- end row one -->
-
+<div class="container">
 <div class="row">
-    <div class="col-md-12">
-        <h1 class="text-uppercase text-center">Our Peru Team Members:</h1>
-        <div class="team-list">
-            <h4>{{ post.us_team | safe }}</h4>
+    <div class="col-md-4">
+        <h1 class="text-uppercase ">Our Pero Team Members:</h1>
+    </div>
+    <div class="col-md-8">
+
+            {{ post.peru_team | safe }}
         </div>
-        <h1 class="text-uppercase text-center">Our US Team Members:</h1>
-        <div class="team-list">
-            <h4>{{ post.peru_team | safe }}</h4>
+
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <h1 class="text-uppercase">Our US Team Members:</h1>
+    </div>
+    <div class="col-md-8">
+
+            {{ post.us_team | safe }}
         </div>
-        <h1 class="text-uppercase text-center">Board of Directors:</h1>
-        <div class="team-list">
-            <h4>{{ post.board_team | safe }}</h4>
+
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <h1 class="text-uppercase ">Board of Directors:</h1>
+    </div>
+    <div class="col-md-8">
+        <div class="">
+            {{ post.board_team | safe }}
         </div>
     </div>
 </div>
+<hr>
+</div>
+
 {% endfor %}
 {% endblock %}
